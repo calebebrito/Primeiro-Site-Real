@@ -5,16 +5,39 @@
     padding: 0;
 }
 
-#head {
-    background-image: linear-gradient(to bottom, #91BECA, #FF9E91, #9C6ED7);
+.arial {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #head {
+    background-image: linear-gradient(to bottom,
+     #897F87,
+     #D39B50 40%,
+     #D39B50 80%,
+     #897F87);
+
     height: 300px;
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     padding-bottom: 60px;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.384);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.button > p {
+    margin: 30px;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: #fc9611;
+    text-align: center;
+    align-content: center;
+    font-size: 20pt;
+    border-radius: 40px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.151);
+}
+
+.button {
+    justify-items: center;
 }
 
 #head h2 {
@@ -22,11 +45,59 @@
 
 }
 
-main {
-    
+body {
+    min-height: 100vh;
+    background-color: white;
 }
 
-#main p {
-    margin-top: 50px;
-    margin-left: 10px;
+#main {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.384);
+    color: white;
+    padding: 10px;
+    font-size: 27pt;
+    margin: 15px;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.452);
+}
+
+.image {
+    height: 40%;
+    background-image: url(images/jerusalem.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: left top;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.377);
+}
+
+.why {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+    font-size: 21pt;
+    margin-bottom: 90px;
+}
+
+.imgWhy > img {
+    width: 100px;
+    height: 100px;
+}
+
+#whyImages {
+    display: flex;
+    gap: 80px;
+    align-self: center;
+    margin: 40px;
+}
+
+.parWhy {
+    display: flex;
+    text-align: center;
+    font-size: 18pt;
+    margin: 40px;
+}
+
+.caption {
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
