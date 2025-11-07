@@ -10,17 +10,12 @@
 }
 
 #head {
-    background-image: linear-gradient(to bottom,
-     #897F87,
-     #D39B50 40%,
-     #D39B50 80%,
-     #897F87);
-
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
     text-align: center;
     padding-bottom: 60px;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.384);
-    border-radius: 0px 0px 10px 10px;
 }
 
 .button > p {
@@ -37,7 +32,7 @@
 }
 
 .button {
-    justify-items: center;
+    margin-bottom: 5px;
 }
 
 #head h2 {
@@ -46,8 +41,12 @@
 }
 
 body {
-    min-height: 100vh;
-    background-color: white;
+    height: 97vh;
+    background-image: linear-gradient(to right,
+     #897F87,
+     #D39B50 40%,
+     #D39B50 80%,
+     #897F87);
 }
 
 #main {
@@ -61,7 +60,6 @@ body {
 }
 
 .image {
-    height: 40%;
     background-image: url(images/jerusalem.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -100,4 +98,8 @@ body {
     display: flex;
     text-align: center;
     justify-content: center;
+}
+
+.xt {
+    margin-left: -20px;
 }
