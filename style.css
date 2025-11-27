@@ -32,14 +32,10 @@ header {
     justify-content: center;
 }
 
-.versus {
-    margin-top: 50%;
-    margin-bottom: 0;
-}
-
-header > h2 {
-    margin-bottom: 45%;
-    color: white;
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .versus {
