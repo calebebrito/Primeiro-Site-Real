@@ -15,7 +15,6 @@
 
 
 * {
-    margin: auto;
     max-width: 100%;
 }
 
@@ -32,30 +31,44 @@ header {
     justify-content: center;
 }
 
+.menu {
+    height: 25px;
+    width: 25px;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: new hope;
+    font-weight: 10;
+    color: white;
+    font-size: 95pt;
+    align-self: center;
+    max-width: 480px;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
 .buttons {
     display: flex;
     gap: 20px;
-    margin-top: 30px;
-}
-
-.versus {
-    font-family: new hope;
-    font-size: 90pt;
-    font-weight: 10;
-    color: white;
 }
 
 .logButton {
-    display: inline-flex;
     padding: 10px;
     width: 150px;
     height: 50px;
     background-color: #fc9611;
-    text-align: center;
     align-content: center;
     font-size: 20pt;
     border-radius: 40px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.151);
+}
+
+.logButton > p {
+    margin: 0;
 }
 
 body {
@@ -95,14 +108,14 @@ body {
 
 .imgWhy > img {
     width: 100px;
-    height: 100px;
-    
+    height: 100px; 
 }
 
 #whyImages {
     display: flex;
     justify-content: center;
     margin: 40px;
+    gap: clamp(40px, 20vw, 300px);
 }
 
 .WhyCaption {
@@ -110,5 +123,5 @@ body {
     justify-content: center;
     margin-top: 80px;
     font-size: 23pt;
-    padding-left: 80px;
+    gap: clamp(30px, 7vw, 300px);
 }
