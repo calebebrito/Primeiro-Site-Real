@@ -31,14 +31,20 @@ header {
     justify-content: center;
 }
 
-.menu {
+#menuPage {
     position: fixed;
     width: 250px;
     top: 0;
     left: 0;
     height: 100vh;
-    z-index: 1000;
     overflow: hidden;
+    background-color: white;
+    width: 250px;
+    height: 932px;
+
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
 }
 
 #menuButton {
@@ -49,30 +55,54 @@ header {
     height: 25px;
     z-index: 1100;
     cursor: pointer;
+
+    transition: transform 0.3s ease;
 }
 
-#menuPage {
-    background-color: white;
-    width: 250px;
-    height: 100vh;
-
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+#menuButton.open {
+    transform: translateX(250px);
 }
 
 #menuPage.open {
     transform: translateX(0);
 }
 
-h1 {
-    margin: 0;
+.menuVersus {
+    font-family: new hope;
+    width: 100px;
+    font-size: 17pt;
+    padding-top: 7px;
+    padding-left: 7px;
+    cursor: pointer;
+}
+
+.homeOp {
+    display: flex;
+    font-family: new hope;
+    margin-top: 35px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.homeOp > p {
+    padding-top: 6px;
+}
+
+.homeOp > img {
+    height: 20px;
+    width: 20px;
+    padding-right: 5px;
+}
+
+#versus {
+    margin: 0 auto;
     margin-bottom: 20px;
     font-family: new hope;
     font-weight: 10;
     color: white;
-    font-size: 95pt;
+    font-size: 67pt;
     align-self: center;
-    max-width: 480px;
+    width: 100%;
 }
 
 h2 {
@@ -86,13 +116,14 @@ h2 {
 
 .logButton {
     padding: 10px;
-    width: 150px;
-    height: 50px;
+    width: 120px;
+    height: 40px;
     background-color: #fc9611;
     align-content: center;
-    font-size: 20pt;
+    font-size: 18pt;
     border-radius: 40px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.151);
+    cursor: pointer;
 }
 
 .logButton > p {
@@ -134,22 +165,24 @@ body {
     margin-bottom: 90px;
 }
 
-.imgWhy > img {
+.whyImages > img {
+    margin-bottom: 40px;
     width: 100px;
     height: 100px; 
 }
 
-#whyImages {
-    display: flex;
-    justify-content: center;
-    margin: 40px;
-    gap: clamp(40px, 20vw, 300px);
+.WhyCaption {
+    margin-top: 15px;
+    font-size: 18pt;
 }
 
+.whyImages,
 .WhyCaption {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    font-size: 23pt;
-    gap: clamp(30px, 7vw, 300px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    justify-items: center;
+    text-align: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
