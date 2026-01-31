@@ -53,10 +53,18 @@ header {
     left: 10px;
     width: 25px;
     height: 25px;
+    padding: 5px;
     z-index: 1100;
     cursor: pointer;
 
     transition: transform 0.3s ease;
+}
+
+#menuButton:hover {
+    width: 27px;
+    height: 27px;
+    background-color: rgba(255, 255, 255, 0.098);
+    border-radius: 10px;
 }
 
 #menuButton.open {
@@ -124,6 +132,12 @@ h2 {
     border-radius: 40px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.151);
     cursor: pointer;
+}
+
+.logButton:hover {
+    width: 130px;
+    height: 45px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.331);
 }
 
 .logButton > p {
