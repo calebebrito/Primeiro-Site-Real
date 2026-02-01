@@ -20,6 +20,7 @@
 
 .arial {
     font-family: Arial, Helvetica, sans-serif;
+    color: #f0f8ff;
 }
 
 header {
@@ -40,7 +41,7 @@ header {
     overflow: hidden;
     background-color: white;
     width: 250px;
-    height: 932px;
+    height: 100vh;
 
     z-index: 1000;
     transform: translateX(-100%);
@@ -75,6 +76,21 @@ header {
     transform: translateX(0);
 }
 
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3 ease;
+    z-index: 900;
+}
+
+#overlay.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
 .menuVersus {
     font-family: new hope;
     width: 100px;
@@ -90,16 +106,24 @@ header {
     margin-top: 35px;
     margin-left: 20px;
     cursor: pointer;
+
+    transition: transform 0.2 ease;
 }
 
 .homeOp > p {
-    padding-top: 6px;
+    padding-top: 11px;
 }
 
 .homeOp > img {
     height: 20px;
     width: 20px;
-    padding-right: 5px;
+    padding: 5px;
+}
+
+.homeOp:hover {
+    background-color: rgba(0, 0, 0, 0.19);
+    border-radius: 7px 0px 0px 7px;
+    transform: scale(1.05) translate(-3px, -3px);
 }
 
 #versus {
@@ -107,7 +131,13 @@ header {
     margin-bottom: 20px;
     font-family: new hope;
     font-weight: 10;
-    color: white;
+    background: linear-gradient(
+                #23E835,
+                #1E3A8A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 90px #23E835;
     font-size: 67pt;
     align-self: center;
     width: 100%;
@@ -115,6 +145,7 @@ header {
 
 h2 {
     margin-bottom: 30px;
+    color: #f0f8ff;
 }
 
 .buttons {
@@ -126,18 +157,24 @@ h2 {
     padding: 10px;
     width: 120px;
     height: 40px;
-    background-color: #fc9611;
+    color: #f0f8ff;
     align-content: center;
     font-size: 18pt;
-    border-radius: 40px;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.151);
+    border-radius: 45px;
+    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
+    border: 3px solid transparent;
+    background: 
+        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
+        linear-gradient(to right, #23E835, #1E3A8A) border-box;
     cursor: pointer;
+
+    transition: transform 0.2 ease;
 }
 
 .logButton:hover {
-    width: 130px;
-    height: 45px;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.331);
+    transform: scale(1.07) translate(-3px, -3px);
+    filter:
+    drop-shadow(0 7px 12px #2431bd71);
 }
 
 .logButton > p {
@@ -146,11 +183,7 @@ h2 {
 
 body {
     height: 97vh;
-    background-image: linear-gradient(to right,
-     #897F87,
-     #D39B50 40%,
-     #D39B50 80%,
-     #897F87);
+    background-image: linear-gradient(to right, #1A1A1A);
 }
 
 #verse {
