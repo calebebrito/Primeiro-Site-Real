@@ -129,6 +129,7 @@ header {
     margin-left: 20px;
     cursor: pointer;
 
+    transition: transform 0.2 ease;
     transition: transform 0.4 ease, box-shadow 0.1 ease;
 }
 
@@ -291,6 +292,11 @@ h2 {
     transition: transform 0.2s ease, box-shadow 0.1s ease;
 }
 
+.logButton:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
 .logButton:hover {
     transform: scale(1.07) translate(-3px, -3px);
     filter:
@@ -382,14 +388,14 @@ body {
 /* QUIZ SCREEN */
 
 
-body {
+/* body {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     text-align: center;
     justify-content: center;
-}
+} */
 
 .mode {
     background-color: #0c0c0c;
@@ -406,7 +412,6 @@ body {
     text-align: left;
     font-family: new hope;
     padding: 5px;
-    margin-bottom: 50px;
 
     background: linear-gradient(
                 #23E835,
@@ -416,54 +421,4 @@ body {
     text-shadow:
         0 0 90px #23E835;
     font-size: 20pt;
-}
-
-.modeBut {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-}
-
-.easyMode,
-.midMode {
-    align-content: center;
-    width: 80px;
-    height: 40px;
-    margin-bottom: 5px;
-    border-radius: 20px;
-    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
-    border: 3px solid transparent;
-    background: 
-        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
-        linear-gradient(to right, #23E835, #1E3A8A) border-box;
-    cursor: pointer;
-
-    transition: transform 0.2s ease, box-shadow 0.1s ease;
-}
-
-.hardMode {
-    align-content: center;
-    width: 80px;
-    height: 40px;
-    margin-bottom: 5px;
-    border-radius: 20px;
-    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
-    border: 3px solid transparent;
-    background: 
-        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
-        linear-gradient(to right, #23E835, #1E3A8A) border-box;
-    cursor: pointer;
-
-    transition: transform 0.2s ease, box-shadow 0.1s ease;
-}
-
-.easyMode:hover {
-    transform: scale(1.07) translate(3px, -3px);
-    filter:
-    drop-shadow(0 7px 12px #2431bd71);
-}
-
-.easyMode:active {
-    transform: translateY(4px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
