@@ -52,7 +52,7 @@ header {
     left: 0;
     height: 100vh;
     overflow: hidden;
-    background-color: rgba(198, 198, 198, 0.218);
+    background-color: rgb(77, 77, 77);
     width: 250px;
     height: 100vh;
 
@@ -122,6 +122,10 @@ header {
     align-self: center;
 }
 
+.menuVersus:active {
+    transform: scale(0.95);
+}
+
 .homeOp {
     display: flex;
     font-family: new hope;
@@ -135,12 +139,14 @@ header {
 .homeOp > p {
     padding-top: 11px;
     padding-left: 3px;
+    color: white;
 }
 
 .homeOp > img {
     height: 20px;
     width: 20px;
     padding: 5px;
+    filter: invert(1);
 }
 
 .homeOp:hover {
@@ -184,6 +190,7 @@ header {
 .versusTxt,
 .rankingTxt {
     padding-top: 11px;
+    color: white;
 }
 
 .playQuiz:hover {
@@ -200,6 +207,7 @@ header {
 .journey {
     padding-top: 12px;
     padding-left: 1px;
+    color: white;
 }
 
 .myJourney:hover {
@@ -309,24 +317,6 @@ h2 {
 body {
     height: 97vh;
     background-image: linear-gradient(to right, #1A1A1A);
-}
-
-#verse {
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.384);
-    color: white;
-    padding: 10px;
-    font-size: 27pt;
-    margin: 15px;
-    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.452);
-}
-
-.image {
-    background-image: url(images/jerusalem.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: left top;
-    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.377);
 }
 
 .why {
@@ -472,4 +462,13 @@ body {
 .blessedMode:active {
     transform: translateY(4px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* SIGNUP SCREEN */
+
+
+#signUpBody {
+    background-color: #1A1A1A;
 }
