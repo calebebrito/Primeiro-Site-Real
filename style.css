@@ -470,5 +470,184 @@ body {
 
 
 #signUpBody {
-    background-color: #1A1A1A;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.signCard {
+    display: flex;
+    flex-direction: column; 
+    width: 30%;
+    height: 500px;
+    min-width: 300px;
+    max-width: 460px;
+    padding: 10px;
+    border-radius: 23px;
+    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
+    border: 3px solid transparent;
+    background: 
+        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
+        linear-gradient(#23E835, #1E3A8A) border-box;
+
+    filter:
+    drop-shadow(0 5px 9px #2431bd71);
+}
+
+.signVs {
+    font-family: new hope;
+    font-size: 45pt;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    background: linear-gradient(
+                #23E835,
+                #1E3A8A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 90px #23E835;
+    align-self: center;
+}
+
+.create {
+    font-size: 20pt;
+    background: linear-gradient(
+                #23E835,
+                #1E3A8A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 90px #23E835;
+        font-weight: bold;
+
+    transform: translateX(-29%);
+}
+
+.emailInput,
+.passInput {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(39, 39, 39, 0.521);
+    width: 90%;
+    height: 40px;
+    border-radius: 8px;
+    justify-content: center;
+    text-align: left;
+    transform: translateX(2%);
+}
+
+.emailInput > img {
+    position: absolute;
+    width: 30px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.emailInput > input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 12pt;
+    transform: translate(35px, 10px);
+}
+
+.passInput > img {
+    position: absolute;
+    width: 24px;
+    left: 10px;
+    top: 50%;
+    transform: translate(3px, -50%);
+}
+
+.passInput > input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 12pt;
+    transform: translate(35px, 12px);
+}
+
+.createBut {
+    margin-top: 20px;
+    font-size: 14pt;
+    padding: 5px;
+    align-content: center;
+    width: 90%;
+    height: 50px;
+    border-radius: 35px;
+    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
+    border: 3px solid transparent;
+    background: 
+        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
+        linear-gradient(to right, #23E835, #1E3A8A) border-box;
+    cursor: pointer;
+
+    transform: translateX(10px);
+    transition: transform 0.2s ease, box-shadow 0.1s ease;
+    animation: borderMove 3s linear;
+}
+
+.createBut:hover {
+    border: 3px solid transparent;
+    background: 
+        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
+        linear-gradient(to right, #1E3A8A, #23E835) border-box;
+    filter:
+    drop-shadow(0 5px 10px #2431bd71);
+}
+
+.createBut:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.createBut:before {
+    content: "";
+    position: absolute;
+    inset: -2px; /* controla espessura da borda */
+    border-radius: 30px;
+    background: linear-gradient(90deg, #23E835, #1E3A8A, #23E835);
+    background-size: 200% 100%;
+    z-index: -1;
+    transition: background-position 1.0s ease;
+}
+
+.createBut:after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 30px;
+    background: #1A1A1A;
+    z-index: -1;
+}
+
+.createBut:hover::before {
+    background-position: 100% 0%;
+}
+
+.alreadyLog {
+    margin-top: 10px;
+    font-size: 8pt;
+}
+
+.alreadyLog > a {
+    color: rgb(0, 153, 255);
+}
+
+.alreadyLog > a:hover {
+    text-decoration: underline;
+}
+
+.alreadyLog > a:visited {
+    color: inherit;
+}
+
+.alreadyLog > a:active {
+    color: inherit;
 }
