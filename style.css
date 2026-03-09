@@ -527,14 +527,9 @@ body {
     max-width: 460px;
     padding: 10px;
     border-radius: 23px;
-    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
-    border: 3px solid transparent;
-    background: 
-        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
-        linear-gradient(#23E835, #1E3A8A) border-box;
 
-    filter:
-    drop-shadow(0 5px 9px #2431bd71);
+    background: #272727ab;
+    backdrop-filter: blur(10px);
 }
 
 .signVs {
@@ -570,7 +565,7 @@ body {
 .passInput {
     margin-top: 20px;
     padding: 10px;
-    background-color: rgba(39, 39, 39, 0.521);
+    background-color: rgba(27, 27, 27, 0.521);
     width: 90%;
     height: 40px;
     border-radius: 8px;
@@ -713,14 +708,9 @@ body {
     max-width: 460px;
     padding: 10px;
     border-radius: 23px;
-    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
-    border: 3px solid transparent;
-    background: 
-        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
-        linear-gradient(#23E835, #1E3A8A) border-box;
-
-    filter:
-    drop-shadow(0 5px 9px #2431bd71);
+    
+    background: #272727ab;
+    backdrop-filter: blur(10px);
 }
 
 
