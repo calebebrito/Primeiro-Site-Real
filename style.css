@@ -106,8 +106,7 @@ header {
 
 .goHomeVs {
     font-family: new hope;
-    width: 100px;
-    font-size: 17pt;
+    width: fit-content;
     padding-top: 10px;
     padding-left: 7px;
     cursor: pointer;
@@ -117,7 +116,7 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 90px #23E835;
+        0 0 10px #00ff157c;
     font-size: 19pt;
     align-self: center;
 }
@@ -265,7 +264,7 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 90px #23E835;
+        0 0 30px #00fd1596;
     font-size: 67pt;
     align-self: center;
     width: 100%;
@@ -502,7 +501,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 90px #23E835;
+        0 0 15px #23e8337c;
 }
 
 .goHomeVs2:active {
@@ -543,7 +542,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 90px #23E835;
+        0 0 15px #23e8337c;
     align-self: center;
 }
 
@@ -722,7 +721,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 90px #23E835;
+        0 0 15px #23e8337c;
         font-weight: bold;
 
     margin-left: -32%;
