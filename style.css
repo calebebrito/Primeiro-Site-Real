@@ -554,7 +554,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 90px #23E835;
+        0 0 15px #23e8337c;
         font-weight: bold;
 
     margin-left: -23%;
@@ -587,7 +587,7 @@ body {
     outline: none;
     color: white;
     font-size: 12pt;
-    transform: translate(35px, 10px);
+    transform: translate(35px, 5px);
 }
 
 .passInput > img {
@@ -604,11 +604,16 @@ body {
     outline: none;
     color: white;
     font-size: 12pt;
-    transform: translate(35px, 12px);
+    transform: translate(35px, 4px);
+    padding-top: 5px;
+}
+
+.g-recaptcha {
+    transform: scale(0.75);
+    width: fit-content;
 }
 
 .createLogBut {
-    margin-top: 20px;
     font-size: 14pt;
     padding: 5px;
     align-content: center;
