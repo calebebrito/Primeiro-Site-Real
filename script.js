@@ -1,6 +1,7 @@
 const whitePage = document.getElementById("menuPage")
 const menuButton = document.getElementById("menuButton")
 
+
 menuButton.addEventListener("click", function(openMenu) {
     whitePage.classList.toggle("open")
     menuButton.classList.toggle("open")
@@ -20,3 +21,13 @@ document.addEventListener("click", (event) => {
 whitePage.addEventListener("click", (e) => {
     e.stopPropagation();
 });
+
+
+let xp = 1000
+let maxXp = 1200
+
+let percent = (xp / maxXp) * 100
+
+document.querySelector(".xpFill").style.width = percent + "%"
+
+document.querySelector(".xpTxt").textContent = xp + " / " + maxXp

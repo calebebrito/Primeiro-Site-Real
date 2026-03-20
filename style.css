@@ -731,3 +731,93 @@ body {
 
     margin-left: -32%;
 }
+
+
+
+/* JOURNEY SCREEN */
+
+
+#journeyBody {
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+}
+
+.statsCard {
+    position: absolute;     /* HEADER NO CANTO SUPERIOR ESQUERDO */
+    top: 60px;
+    left: 100px;
+
+    display: flex;
+    flex-direction: column; 
+    width: 23%;
+    height: 540px;
+    min-width: 300px;
+    max-width: 460px;
+    padding: 10px;
+    border-radius: 23px;
+    
+    background: #272727ab;
+    backdrop-filter: blur(10px);
+}
+
+.journeyTxt {
+    font-size: 30pt;
+    background: linear-gradient(
+                #23E835,
+                #1E3A8A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 15px #23e8337c;
+        font-weight: bold;
+        
+    padding: 10px;
+}
+
+.levelLine {
+    display: flex;      /* TEXTOS INLINE */
+    gap: 7px;
+    width: fit-content;
+
+    padding-top: 20px;
+    padding-left: 12px;
+}
+
+.levelTitle {
+    background: linear-gradient(
+                #23E835,
+                #1E3A8A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 15px #23e8337c;
+        font-weight: bold;
+}
+
+.xpBar {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 12px;
+    width: 80%;
+    height: 20px;
+    background-color: #111;
+    border-radius: 10px;
+}
+
+.xpFill {
+    height: 100%;
+    width: 60%;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to right,
+        #23E835,
+        #1E3A8A);
+
+    transition: width 0.4s ease;
+}
+
+.xpTxt {
+    margin-left: 25px;
+}
