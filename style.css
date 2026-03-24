@@ -838,6 +838,7 @@ body {
 
     background: #302f2f;
     backdrop-filter: blur(10px);
+    margin-bottom: 20px;
 }
 
 .achievsLink {
@@ -891,4 +892,25 @@ body {
 
 .achievs > strong {
     color: #099cf1;
+}
+
+#verses {
+    border-radius: 18px;
+    padding: 10px;
+
+    background: #302f2f;
+    backdrop-filter: blur(10px);
+}
+
+.verseTxt {
+    background: linear-gradient(to right,
+                #2d54be 10%,
+                #23E835 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 15px #2347e87c;
+        font-weight: bold;
+
+    width: fit-content;
 }
