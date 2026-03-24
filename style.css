@@ -773,21 +773,22 @@ body {
         font-weight: bold;
         
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 .levelLine {
-    display: flex;      /* TEXTOS INLINE */
-    gap: 7px;
-    width: fit-content;
+    display: flex;          /*                 */
+    gap: 7px;              /*  TEXTOS INLINE  */
+    width: fit-content;   /*                 */
 
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 12px;
 }
 
 .levelTitle {
-    background: linear-gradient(
-                #23E835,
-                #1E3A8A);
+    background: linear-gradient(to right,
+                #23E835 10%,
+                #1E3A8A 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
@@ -807,7 +808,7 @@ body {
 
 .xpFill {
     height: 100%;
-    width: 60%;
+    width: 0%;
     border-radius: 10px;
 
     background: linear-gradient(
@@ -820,4 +821,74 @@ body {
 
 .xpTxt {
     margin-left: 25px;
+    padding-bottom: 9px;
+}
+
+.lvlBox {
+    border-radius: 18px;
+    margin-bottom: 20px;
+    
+    background: #302f2f;
+    backdrop-filter: blur(10px);
+}
+
+.achievBox {
+    border-radius: 18px;
+    padding: 10px;
+
+    background: #302f2f;
+    backdrop-filter: blur(10px);
+}
+
+.achievsLink {
+    display: flex;
+    justify-content: space-between;
+}
+
+.achievsLink > a {
+    color: white;
+    font-size: 9pt;
+}
+
+.achievsLink > a:hover {
+    text-decoration: underline;
+}
+
+.achievTxt {
+    background: linear-gradient(to right,
+        #ffd900 10%,
+        #ffffff 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 15px #e5e8237c;
+        font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.compQuiz {
+    display: flex;          /*   TEXTOS INLINE   */
+    gap: 7px;              /*                   */
+
+    width: 95%;
+    padding: 3px;
+    background: #474747;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.check {
+    padding-left: 3px;
+    color: #3bc540;
+    transform: scale(1.2);
+}
+
+.achievs {
+    padding-top: 3px;
+}
+
+.achievs > strong {
+    color: #099cf1;
 }

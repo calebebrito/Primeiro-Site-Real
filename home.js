@@ -21,13 +21,3 @@ document.addEventListener("click", (event) => {
 whitePage.addEventListener("click", (e) => {
     e.stopPropagation();
 });
-
-
-let xp = 1000
-let maxXp = 1200
-
-let percent = (xp / maxXp) * 100
-
-document.querySelector(".xpFill").style.width = percent + "%"
-
-document.querySelector(".xpTxt").textContent = xp + " / " + maxXp
