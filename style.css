@@ -862,7 +862,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 15px #e5e8237c;
+        0 0 15px #e5e823cc;
         font-weight: bold;
 
     margin-bottom: 10px;
@@ -904,13 +904,36 @@ body {
 
 .verseTxt {
     background: linear-gradient(to right,
-                #2d54be 10%,
-                #23E835 90%);
+        #ffd900 10%,
+        #ffffff 85%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 15px #2347e87c;
+        0 0 15px #e5e823cc;
         font-weight: bold;
 
     width: fit-content;
+}
+
+#verseRef {
+    color: #5eff00;
+    text-shadow: 
+        0 0 5px #73ff00;
+}
+
+.statsCard2 {
+    position: absolute;     /* HEADER NO CANTO SUPERIOR DIREITO */
+    top: 60px;
+    right: 100px;
+
+    display: flex;
+    flex-direction: column; 
+    width: 63%;
+    height: 540px;
+    min-width: 300px;
+    padding: 10px;
+    border-radius: 23px;
+    
+    background: #272727ab;
+    backdrop-filter: blur(10px);
 }
