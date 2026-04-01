@@ -743,10 +743,16 @@ body {
     flex-direction: column;
 }
 
+#journeyBody > section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px;   
+}
+
 .statsCard {
-    position: absolute;     /* HEADER NO CANTO SUPERIOR ESQUERDO */
-    top: 60px;
-    left: 100px;
+    margin-top: 50px;
+    margin-left: 60px;
 
     display: flex;
     flex-direction: column; 
@@ -922,15 +928,14 @@ body {
 }
 
 .statsCard2 {
-    position: absolute;     /* HEADER NO CANTO SUPERIOR DIREITO */
-    top: 60px;
-    right: 100px;
+    margin: 20px;
+    margin-top: 50px;
 
     display: flex;
-    flex-direction: column; 
-    width: 63%;
+    flex-direction: column;
+    width: 800px;
+    max-width: 800px;
     height: 540px;
-    min-width: 300px;
     padding: 10px;
     border-radius: 23px;
     
