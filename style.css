@@ -763,7 +763,7 @@ body {
     padding: 10px;
     border-radius: 23px;
     
-    background: #272727ab;
+    background: #0D0709;
     backdrop-filter: blur(10px);
 }
 
@@ -939,6 +939,60 @@ body {
     padding: 10px;
     border-radius: 23px;
     
-    background: #272727ab;
+    background: #0D0709;
     backdrop-filter: blur(10px);
+}
+
+.rank {
+    width: fit-content;
+}
+
+.mainRank {
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
+}
+
+.rankTxt {
+    margin-left: 170px;
+
+    background: linear-gradient(to right,
+        #FDB982 20%,
+        #ffffff 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 15px #FDB982;
+        font-weight: bold;
+
+    width: fit-content;
+}
+
+.battleBar {
+    position: relative;
+
+    margin-top: 60px;
+    margin-left: 50px;
+    width: 300px;
+    height: 20px;
+    background: #111;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+}
+
+.wins {
+    height: 100%;
+    background: linear-gradient(to right, #23E835, #00ff88);
+    transition: width 0.5s ease;
+}
+
+.losses {
+    height: 100%;
+    background: linear-gradient(to left, #1e90ff, #003cff);
+    transition: width 0.5s ease;
+}
+
+.battleTxt {
+    margin-left: 130px;
 }

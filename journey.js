@@ -57,3 +57,25 @@ const random = Math.floor(Math.random() * verses.length)
 
 verseRef.textContent = verses[index].ref
 verseText.textContent = verses[index].text
+
+
+function updateBattleBar(wins, losses) {
+    const win = document.querySelector(".wins")
+    const loss = document.querySelector(".losses")
+    const battleTxt = document.querySelector(".battleTxt")
+
+
+    const total = wins + losses
+
+    if (total === 0) return
+
+    const winPercent = (wins / total) * 50
+    const lossPercent = (losses / total) * 50
+
+    win.style.width = winPercent + "%"
+    loss.style.width = lossPercent + "%"
+
+    battleTxt.innerText = `${wins} Wins | ${losses} Losses`
+}
+
+updateBattleBar(30, 10)
