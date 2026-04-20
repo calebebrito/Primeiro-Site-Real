@@ -63,19 +63,40 @@ function updateBattleBar(wins, losses) {
     const win = document.querySelector(".wins")
     const loss = document.querySelector(".losses")
     const battleTxt = document.querySelector(".battleTxt")
+    const middleLine = document.querySelector(".middleLine")
 
 
     const total = wins + losses
 
-    if (total === 0) return
+    if (total === 0) {
+        win.style.width = "50%"
+        loss.style.width = "50%"
+        middleLine.style.left = "0%"
+        battleTxt.innerText = "0 Wins | 0 Losses"
+        return
+    }
 
-    const winPercent = (wins / total) * 50
-    const lossPercent = (losses / total) * 50
+    const winPercent = (wins / total) * 100
+    const lossPercent = (losses / total) * 100
 
     win.style.width = winPercent + "%"
     loss.style.width = lossPercent + "%"
+    middleLine.style.right = lossPercent + "%"
 
     battleTxt.innerText = `${wins} Wins | ${losses} Losses`
 }
 
-updateBattleBar(30, 10)
+updateBattleBar(67, 25)
+
+
+
+let rankFill = document.querySelector('.rankFill')
+let rankXp = document.querySelector('.rankXp')
+
+let xp2 = 740
+let maxXp2 = 1200
+
+let percent2 = (xp2 / maxXp2) * 100
+
+rankFill.style.width = percent2 + "%"
+rankXp.textContent = xp2 + " / " + maxXp2

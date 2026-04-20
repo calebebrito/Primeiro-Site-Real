@@ -968,31 +968,81 @@ body {
     width: fit-content;
 }
 
+.rankBar {
+    margin-top: 10px;
+    margin-left: 100px;
+    height: 15px;
+    width: 30%;
+    background-color: #111;
+    border-radius: 10px;
+}
+
+.rankFill {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to right,
+        #FDB982,
+        #ffffff);
+
+    transition: width 0.4s ease;
+}
+
+.rankXp {
+    font-size: 8pt;
+    margin-left: 170px;
+}
+
 .battleBar {
     position: relative;
-
-    margin-top: 60px;
-    margin-left: 50px;
+    margin-left: 45px;
+    margin-top: 50px;
     width: 300px;
     height: 20px;
     background: #111;
     border-radius: 20px;
     overflow: hidden;
-    display: flex;
+}
+
+.losses, 
+.wins {
+    height: 100%;
+    transition: width 0.5s ease;
 }
 
 .wins {
+    position: absolute;
+    left: 0;
     height: 100%;
+    width: 0%;
+
     background: linear-gradient(to right, #23E835, #00ff88);
-    transition: width 0.5s ease;
+    box-shadow: 0 0 10px #23E83588;
 }
 
 .losses {
+    position: absolute;
+    right: 0;
     height: 100%;
+    width: 0%;
+
     background: linear-gradient(to left, #1e90ff, #003cff);
-    transition: width 0.5s ease;
+    box-shadow: 0 0 10px #1e90ff88;
+}
+
+.middleLine {
+    position: absolute;
+    right: 50%;
+    width: 2px;
+    height: 100%;
+    background: white;
+    transition: left 0.5s ease;
+    z-index: 2;
 }
 
 .battleTxt {
+    margin-top: 10px;
     margin-left: 130px;
 }
