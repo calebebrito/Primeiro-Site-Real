@@ -91,7 +91,6 @@ updateBattleBar(67, 25)
 
 
 let rankFill = document.querySelector('.rankFill')
-let rankXp = document.querySelector('.rankXp')
 
 let xp2 = 740
 let maxXp2 = 1200
@@ -99,4 +98,3 @@ let maxXp2 = 1200
 let percent2 = (xp2 / maxXp2) * 100
 
 rankFill.style.width = percent2 + "%"
-rankXp.textContent = xp2 + " / " + maxXp2

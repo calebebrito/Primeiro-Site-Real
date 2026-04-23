@@ -933,13 +933,14 @@ body {
 
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     width: 800px;
     max-width: 800px;
     height: 540px;
     padding: 10px;
     border-radius: 23px;
     
-    background: #0D0709;
+    background: #070608;
     backdrop-filter: blur(10px);
 }
 
@@ -970,7 +971,7 @@ body {
 
 .rankBar {
     margin-top: 10px;
-    margin-left: 100px;
+    margin-left: 80px;
     height: 15px;
     width: 30%;
     background-color: #111;
@@ -988,11 +989,6 @@ body {
         #ffffff);
 
     transition: width 0.4s ease;
-}
-
-.rankXp {
-    font-size: 8pt;
-    margin-left: 170px;
 }
 
 .battleBar {
@@ -1045,4 +1041,14 @@ body {
 .battleTxt {
     margin-top: 10px;
     margin-left: 130px;
+    width: fit-content;
+}
+
+.stats {
+    position: relative;
+    width: 52%;
+    height: 100%;
+    background-color: #302f2f;
+    border-radius: 18px;
+    left: 2%;
 }
