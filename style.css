@@ -928,34 +928,59 @@ body {
 }
 
 .statsCard2 {
-    margin: 20px;
-    margin-top: 50px;
+    margin: 50px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 10px;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 800px;
-    max-width: 800px;
-    height: 540px;
+    width: min(90vw, 800px);
+    min-height: 540px;
+    height: auto;
+
     padding: 10px;
-    border-radius: 23px;
-    
+    border-radius: 23px;    
     background: #070608;
     backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.statsCard2 > .journeyTxt {
+    grid-column: 1 / -1;
+    width: fit-content;
+}
+
+.leftJourney {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
 }
 
 .rank {
     width: fit-content;
 }
 
+.ranked {
+    background: linear-gradient(to right,
+                #23E835 10%,
+                #1E3A8A 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 15px #23e8337c;
+        font-weight: bold;
+        font-size: 18pt;
+
+    margin-bottom: 50px;
+}
+
 .mainRank {
     height: 200px;
     width: 200px;
-    margin-left: 100px;
 }
 
 .rankTxt {
-    margin-left: 170px;
+    margin-left: 65px;
 
     background: linear-gradient(to right,
         #FDB982 20%,
@@ -970,10 +995,11 @@ body {
 }
 
 .rankBar {
+    grid-column: 1;
     margin-top: 10px;
-    margin-left: 80px;
-    height: 15px;
-    width: 30%;
+    height: 10px;
+    width: 180px;
+    max-width: 80%;
     background-color: #111;
     border-radius: 10px;
 }
@@ -992,10 +1018,10 @@ body {
 }
 
 .battleBar {
+    grid-column: 1;
     position: relative;
-    margin-left: 45px;
     margin-top: 50px;
-    width: 300px;
+    width: 250px;
     height: 20px;
     background: #111;
     border-radius: 20px;
@@ -1039,16 +1065,18 @@ body {
 }
 
 .battleTxt {
+    grid-column: 1;
     margin-top: 10px;
-    margin-left: 130px;
+    margin-left: 15px;
+    left: 0;
     width: fit-content;
 }
 
 .stats {
     position: relative;
-    width: 52%;
+    width: 100%;
     height: 100%;
+    min-height: 350px;
     background-color: #302f2f;
     border-radius: 18px;
-    left: 2%;
 }
