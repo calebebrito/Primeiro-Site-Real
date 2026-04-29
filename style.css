@@ -43,6 +43,10 @@ header {
     height: 100vh;
     text-align: center;
     justify-content: center;
+
+    background: linear-gradient(135deg, #0a0a0a, #0c1220, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
 }
 
 #menuPage {
@@ -52,7 +56,7 @@ header {
     left: 0;
     height: 100vh;
     overflow: hidden;
-    background-color: rgb(77, 77, 77);
+    background-color: rgba(59, 62, 70, 0.507);
     width: 250px;
     height: 100vh;
 
@@ -283,16 +287,17 @@ h2 {
 .logButton {
     padding: 10px;
     width: 120px;
-    height: 40px;
+    height: 45px;
     color: #f0f8ff;
     align-content: center;
     font-size: 18pt;
     border-radius: 45px;
-    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
-    border: 3px solid transparent;
+    box-shadow: 2px 2px 2px 2px rgba(10, 10, 10, 0.158);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     background: 
-        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
-        linear-gradient(to right, #23E835, #1E3A8A) border-box;
+        linear-gradient(#2a2a2a20, #2a2a2a20) padding-box,
+        linear-gradient(to right, #2a2a2a20, #2a2a2a20) border-box;
     cursor: pointer;
 
     transition: transform 0.2s ease, box-shadow 0.1s ease;
@@ -301,7 +306,11 @@ h2 {
 .logButton:hover {
     transform: scale(1.07) translate(-3px, -3px);
     filter:
-    drop-shadow(0 7px 12px #2431bd71);
+    drop-shadow(0 2px 5px #1d7e4241);
+
+    background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 3s ease infinite;
 }
 
 .logButton:active {
@@ -316,6 +325,10 @@ h2 {
 body {
     height: 97vh;
     background-image: linear-gradient(to right, #1A1A1A);
+
+    background: linear-gradient(135deg, #0a0a0a, #0c1220, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
 }
 
 .why {
@@ -741,13 +754,48 @@ body {
     background-color: #1a1a1a;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #0a0a0a, #0f172a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 #journeyBody > section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     gap: 10px;   
+}
+
+.goHomeVs4 {
+    position: absolute;     /* HEADER NO CANTO SUPERIOR ESQUERDO */
+    top: 8px;
+    left: 8px;
+
+    font-family: new hope;
+    width: fit-content;
+    padding-top: 10px;
+    padding-left: 7px;
+    background: linear-gradient(
+                #23E835,
+                #1E3A8A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+        0 0 15px #23e8337c;
+
+    font-size: 18pt;
+}
+
+.goHomeVs4:active {
+    transform: scale(0.95);
 }
 
 .statsCard {
@@ -757,13 +805,13 @@ body {
     display: flex;
     flex-direction: column; 
     width: 23%;
-    height: 540px;
+    height: 563px;
     min-width: 300px;
     max-width: 460px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 23px;
     
-    background: #0D0709;
+    background: #070608;
     backdrop-filter: blur(10px);
 }
 
@@ -844,7 +892,7 @@ body {
 
     background: #302f2f;
     backdrop-filter: blur(10px);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .achievsLink {
@@ -900,6 +948,26 @@ body {
     color: #099cf1;
 }
 
+.nextReward {
+    display: flex;
+    gap: 7px;
+
+    border-radius: 18px;
+    margin-bottom: 15px;
+    padding: 10px;
+    
+    background: #302f2f;
+    backdrop-filter: blur(10px);
+}
+
+.nextReward > strong {
+    color: #5eff00;
+    text-shadow: 
+        0 0 5px #73ff00;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #verses {
     border-radius: 18px;
     padding: 10px;
@@ -927,6 +995,19 @@ body {
         0 0 5px #73ff00;
 }
 
+.dailyChallenge {
+    display: flex;
+    gap: 7px;
+
+    border-radius: 18px;
+    margin-top: 16px;
+    padding: 7px;
+    font-size: 9.5pt;
+    
+    background: #302f2f;
+    backdrop-filter: blur(10px);
+}
+
 .statsCard2 {
     margin: 50px 20px 20px;
     display: grid;
@@ -937,7 +1018,7 @@ body {
     min-height: 540px;
     height: auto;
 
-    padding: 10px;
+    padding: 15px;
     border-radius: 23px;    
     background: #070608;
     backdrop-filter: blur(10px);
@@ -1076,7 +1157,31 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 350px;
+    min-height: 445px;
+    max-height: 445px;
     background-color: #302f2f;
     border-radius: 18px;
+    justify-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.statsItems {
+    display: flex;          /*   TEXTOS INLINE   */
+    gap: 7px;              /*                   */
+
+    width: 90%;
+    margin-top: 10px;
+    padding: 10px;
+    background: #474747;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.statsItems > strong {
+    color: #5eff00;
+    text-shadow: 
+        0 0 5px #73ff00;
+
+    font-family: Arial, Helvetica, sans-serif;
 }

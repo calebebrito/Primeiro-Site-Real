@@ -1,8 +1,8 @@
 let fill = document.querySelector('#xpFill')
 let text = document.querySelector('#xpTxt')
 
-let xp = 740
-let maxXp = 1200
+let xp = 1260
+let maxXp = 2000
 
 let percent = (xp / maxXp) * 100
 
@@ -86,7 +86,7 @@ function updateBattleBar(wins, losses) {
     battleTxt.innerText = `${wins} Wins | ${losses} Losses`
 }
 
-updateBattleBar(67, 25)
+updateBattleBar(243, 114)
 
 
 
