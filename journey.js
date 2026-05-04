@@ -11,32 +11,32 @@ text.textContent = xp + " / " + maxXp
 
 const verses = [
     {
-        ref: "Provérbios 16:3",
-        text: "'Consagre ao Senhor tudo o que você faz, e os seus planos serão bem sucedidos.'"
+        ref: "Proverbs 16:3",
+        text: "'Commit to the Lord whatever you do, and he will establish your plans.'"
     },
     {
-        ref: "Josué 1:9",
-        text: "'Não fui eu que ordenei a você? Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar.'"
+        ref: "Joshua 1:9",
+        text: "'Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.'"
     },
     {
-        ref: "João 16:33",
-        text:"'Eu disse essas coisas para que em mim vocês tenham paz. Neste mundo vocês terão aflições; contudo, tenham ânimo! Eu venci o mundo.'"
+        ref: "John 16:33",
+        text:"'I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world'"
     },
     {
-        ref: "Mateus 11:28",
-        text: "'Venham a mim, todos os que estão cansados e sobrecarregados, e eu darei descanso a vocês.'"
+        ref: "Matthew 11:28",
+        text: "'Come to me, all you who are weary and burdened, and I will give you rest.'"
     },
     {
-        ref: "João 14:6",
-        text: "'Respondeu Jesus: 'Eu sou o caminho, a verdade e a vida. Ninguém vem ao Pai, a não ser por mim.''"
+        ref: "John 14:6",
+        text: "Jesus answered, 'I am the way and the truth and the life. No one comes to the Father except through me.'"
     },
     {
-        ref: "1 Tessalonicenses 5:18",
-        text: "'Deem graças em todas as circunstâncias, pois esta é a vontade de Deus para vocês em Cristo Jesus.'"
+        ref: "1 Thessalonians 5:18",
+        text: "'give thanks in all circumstances; for this is God’s will for you in Christ Jesus.'"
     },
     {
-        ref: "Salmos 37:5",
-        text: "'Entregue o seu caminho ao Senhor; confie nele, e ele agirá.'"
+        ref: "Psalms 37:5",
+        text: "'Commit your way to the Lord, trust in him and he will do this:'"
     }
 ]
 

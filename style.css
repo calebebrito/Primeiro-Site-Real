@@ -570,7 +570,7 @@ body {
         0 0 15px #23e8337c;
         font-weight: bold;
 
-    margin-left: -23%;
+    margin-left: -15%;
 }
 
 .emailInput,
@@ -622,7 +622,7 @@ body {
 }
 
 .g-recaptcha {
-    transform: scale(0.75);
+    transform: scale(0.60);
     width: fit-content;
 }
 
@@ -633,59 +633,35 @@ body {
     width: 90%;
     height: 50px;
     border-radius: 35px;
-    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
-    border: 3px solid transparent;
+    box-shadow: 2px 2px 2px 2px rgba(10, 10, 10, 0.158);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     background: 
-        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
-        linear-gradient(to right, #23E835, #1E3A8A) border-box;
+        linear-gradient(#2a2a2a20, #2a2a2a20) padding-box,
+        linear-gradient(to right, #2a2a2a20, #2a2a2a20) border-box;
     cursor: pointer;
 
-    transform: translateX(10px);
     transition: transform 0.2s ease, box-shadow 0.1s ease;
-    animation: borderMove 3s linear;
+    transform: translateX(10px);
 }
 
 .createLogBut:hover {
-    border: 3px solid transparent;
-    background: 
-        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
-        linear-gradient(to right, #1E3A8A, #23E835) border-box;
+    transform: scale(1.02) translateY(-1px);
     filter:
-    drop-shadow(0 5px 10px #2431bd71);
+    drop-shadow(0 2px 5px #1d7e4241);
+
+    background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 3s ease infinite;
 }
 
 .createLogBut:active {
-    transform: scale(0.97);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.createLogBut:before {
-    content: "";
-    position: absolute;
-    inset: -2px; /* controla espessura da borda */
-    border-radius: 30px;
-    background: linear-gradient(90deg, #23E835, #1E3A8A, #23E835);
-    background-size: 200% 100%;
-    z-index: -1;
-    transition: background-position 1.0s ease;
-}
-
-.createLogBut:after {
-    content: "";
-    position: absolute;
-    inset: 2px;
-    border-radius: 30px;
-    background: #1A1A1A;
-    z-index: -1;
-}
-
-.createLogBut:hover::before {
-    background-position: 100% 0%;
+    transform: scale(0.95);
 }
 
 .alreadyLog {
     margin-top: 10px;
-    font-size: 8pt;
+    font-size: 7pt;
 }
 
 .alreadyLog > a:hover {
@@ -754,7 +730,6 @@ body {
     background-color: #1a1a1a;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 
     background: linear-gradient(135deg, #0a0a0a, #0f172a, #020617);
     background-size: 400% 400%;
@@ -803,7 +778,7 @@ body {
     margin-left: 60px;
 
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     width: 23%;
     height: 563px;
     min-width: 300px;
