@@ -20,33 +20,37 @@
 
         <p class="create arial">Create Account</p>
 
-            <div class="emailInput arial">
-                <img src="images/email-icon.png" alt="email icon">
-                <input type="email" placeholder="Email">
-            </div>
-            
-            <div class="passInput arial">
-                <img src="images/lock-icon.png" alt="lock icon">
-                <input type="password" placeholder="Password">
-            </div>
-            
-            <div class="passInput arial">
-                <img src="images/lock-icon.png" alt="lock icon">
-                <input type="password" placeholder="Confirm Password">
-            </div>
-
-            <form>
-                <div class="g-recaptcha"
-                    data-sitekey="6Lf8544sAAAAAGBhXIV1qGjpl5NZ4hB3LYSf314u">
+            <form id="signupForm">
+                <div class="emailInput arial">
+                    <img src="images/email-icon.png" alt="email icon">
+                    <input id="signupEmail" type="email" placeholder="Email" required>
                 </div>
+                
+                <div class="passInput arial">
+                    <img src="images/lock-icon.png" alt="lock icon">
+                    <input id="signupPassword" type="password" placeholder="Password" required>
+                </div>
+                
+                <div class="passInput arial">
+                    <img src="images/lock-icon.png" alt="lock icon">
+                    <input id="confirmPassword" type="password" placeholder="Confirm Password" required>
+                </div>
+                
+                    <div class="g-recaptcha"
+                        data-sitekey="6Lf8544sAAAAAGBhXIV1qGjpl5NZ4hB3LYSf314u">
+                    </div>
+                
+                <button type="submit" class="createLogBut">
+                    <p class="arial">Create Account</p>
+                </button>
             </form>
-
-
-            <div class="createLogBut">
-                <p class="arial">Create Account</p>
-            </div>
-
-            <p class="alreadyLog arial">Already have an account? <a href="logInScreen.html" style="color: #0099ff;"> Login</a></p>
     </div>
+
+    <p class="alreadyLog arial">Already have an account?
+         <a href="logInScreen.html" style="color: #0099ff;"> Login</a>
+    </p>
+
+
+    <script src="JS/signup.js"></script>
 </body>
 </html>
