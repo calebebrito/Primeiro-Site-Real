@@ -31,20 +31,41 @@ const accountIcon = document.querySelector('.accountIcon')
 const savedUser = localStorage.getItem("versusUser")
 const isLoggedIn = localStorage.getItem("versusLoggedIn")
 
+const authButtons = document.querySelector("#authButtons")
+const logoutButton = document.querySelector(".logout")
+
+
 if (savedUser && isLoggedIn === "true") {
     const user = JSON.parse(savedUser)
 
     accountName.textContent = `Hello, ${user.username}`
     accountLevel.textContent = `Level ${user.level}`
+
+    if (authButtons) {
+        authButtons.style.display = "none"
+    }
+
+    if (logoutButton) {
+        logoutButton.style.button = "block"
+    }
+
 } else {
     accountName.textContent = "Hello, guest"
     accountLevel.textContent = ""
+
+    if (authButtons) {
+        authButtons.style.display = "flex"
+    }
+
+    if (logoutButton) {
+        logoutButton.style.display = "none"
+    }
 }
 
-const authButtons = document.querySelector("#authButtons")
+if (logoutButton) {
+    logoutButton.addEventListener ("click", function() {
+        localStorage.setItem("versusLoggedIn", "false")
 
-if (savedUser && isLoggedIn === "true") {
-    if (authButtons) {
-    authButtons.style.display = "none"
-    }
+        window.location.href = "homeScreen.html"
+    })
 }
