@@ -15,20 +15,19 @@ if (loginForm) {
             return
         }
 
-        const savedUser = localStorage.getItem("versusUser")
+        const savedUsers = localStorage.getItem("versusUsers")
+        const users = savedUsers ? JSON.parse(savedUsers) : []
 
-        if (!savedUser) {
-            alert ("No account found. Please create an account first!")
-            return
-        }
+        const foundUser = users.find (function (user) {
+            return user.email === email && user.password === password
+        })
 
-        const user = JSON.parse(savedUser)
-
-        if (email !== user.email || password !== user.password) {
+        if (!foundUser) {
             alert ("Incorrect email or password!")
             return
         }
 
+        localStorage.setItem("versusUser", JSON.stringify(foundUser))
         localStorage.setItem("versusLoggedIn", "true")
 
         window.location.href = "homeScreen.html"        

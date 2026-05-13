@@ -16,25 +16,49 @@
 
     <section id="modeSection">
         <div class="mode">
-            <p class="selectMode arial">SELECIONE O MODO</p>
+            <p class="selectMode arial">SELECT A MODE</p>
             <div class="modeBut">
-                <div class="easyMode arial">
-                    Fácil
-                </div>
+                <button class="easyMode arial modeButton" data-mode="easy">
+                    Easy
+                </button>
         
-                <div class="midMode arial">
-                    Médio
+                <button class="midMode arial modeButton" data-mode="medium">
+                    Medium
                 </div>
-                <div class="hardMode arial">
-                    Difícil
+                <button class="hardMode arial modeButton" data-mode="hard"">
+                    Hard
                 </div>
 
-                <div class="blessedMode arial">
-                    Abençoado
+                <button class="blessedMode arial modeButton" data-mode="blessed">
+                    Blessed
                 </div>
 
             </div>
         </div>
     </section>
+
+    <section id="quizSection" class="arial" style="display: none;">
+        <div class="quizCard">
+            <p id="quizModeText">Mode</p>
+            <p id="quizProgress">Question 1 / 5</p>
+
+            <h1 id="questionTitle">Question here</h1>
+
+            <div id="optionsContainer"></div>
+
+            <p id="feedbackText"></p>
+
+            <button id="nextQuestionButton" style="display: none;">
+                Next question
+            </button>
+
+            <button id="finishQuizButton" style="display: none;">
+                Finish quiz
+            </button>
+        </div>
+    </section>
+
+    <script src="JS/storage.js"></script>
+    <script src="JS/quiz.js"></script>
 </body>
 </html>

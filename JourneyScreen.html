@@ -17,8 +17,8 @@
 
             <div class="lvlBox">
                 <div class="levelLine">
-                    <p class="level arial">Level 37</p>
-                    <p class="levelTitle arial">(Pilgrim)</p>
+                    <p class="level arial" id="journeyLevel">Level 1</p>
+                    <p class="levelTitle arial" id="'journeyTitle">(Beginner)</p>
                 </div>
                 <div class="xpBar">
                     <div class="xpFill" id="xpFill"></div>
@@ -35,21 +35,21 @@
                 </div>
 
                 <div class="compQuiz">
-                    <p class="check">✔</p>
+                    <p class="check">☐</p>
                     <p class="achievs"><strong>10</strong> completed quizzes</p>
                 </div>
                 <div class="compQuiz">
-                    <p class="check">✔</p>
-                    <p class="achievs"><strong>50</strong> right answers</p>
+                    <p class="check">☐</p>
+                    <p class="achievs"><strong>10</strong> right answers</p>
                 </div>
                 <div class="compQuiz">
-                    <p class="check">✔</p>
+                    <p class="check">☐</p>
                     <p class="achievs">Reach level <strong>5</strong></p>
                 </div>
             </div>
 
             <div class="nextReward">
-                <p class="arial">Daily streak: </p> <strong>67</strong>
+                <p class="arial">Daily streak: </p> <strong>1</strong>
             </div>
 
             <div id="verses">
@@ -73,8 +73,8 @@
                 </div>
 
                 <div class="rank">
-                    <img src="rank-imgs/ascend+_rank.png" alt="ranking" class="mainRank">
-                    <p class="rankTxt arial">Ascend +</p>
+                    <img id="rankImage" src="rank-imgs/seed_rank.png" alt="ranking" class="mainRank">
+                    <p id="rankText" class="rankTxt arial">Seed</p>
                 </div>
 
                 <div class="rankBar">
@@ -92,45 +92,47 @@
 
             <div class="stats">
                 <div class="statsItems">
-                    <p class="arial">Completed quizzes:  </p> <strong>109</strong>
+                    <p class="arial">Completed quizzes:  </p> <strong id="completedQuizzes">0</strong>
                 </div>
 
                 <div class="statsItems">
-                    <p class="arial">Blessed quizzes completed:  </p> <strong>16</strong>
+                    <p class="arial">Blessed quizzes completed:  </p> <strong id="blessedQuizzes">0</strong>
                 </div>
 
                 <div class="statsItems">
-                    <p class="arial">Higher days streak:  </p> <strong>67</strong>
+                    <p class="arial">Higher days streak:  </p> <strong id="higherStreak">0</strong>
                 </div>
 
                 <div class="statsItems">
-                    <p class="arial">Achievements unlocked:  </p> <strong>21</strong>
+                    <p class="arial">Achievements unlocked:  </p> <strong id="achievementsUnlocked">0</strong>
                 </div>
 
                 <div class="statsItems">
-                    <p class="arial">Global ranking:  </p> <strong>23305th</strong>
+                    <p class="arial">Global ranking:  </p> <strong id="globalRanking">Unranked</strong>
                 </div>
 
                 <div class="statsItems">
-                    <p class="arial">Titles unlocked:  </p> <strong>17</strong>
+                    <p class="arial">Titles unlocked:  </p> <strong id="titlesUnlocked">0</strong>
                 </div>
 
                 <div class="statsItems">
-                    <p class="arial">Win percentage:  </p> <strong>72%</strong>
+                    <p class="arial">Win percentage:  </p> <strong id="winPercentage">0%</strong>
                 </div>
 
                 <div class="statsItems">
-                    <p class="arial">Favorite mode:  </p> <strong>Ranked</strong>
+                    <p class="arial">Favorite mode:  </p> <strong id="favoriteMode">Unknwon</strong>
                 </div>
                 
                 <div class="statsItems">
-                    <p class="arial">Favorite difficulty:  </p> <strong>Hard</strong>
+                    <p class="arial">Favorite difficulty:  </p> <strong id="favoriteDifficulty">Unknwon</strong>
                 </div>
             </div>
         </div>
 
     </section>
 
+
+    <script src="JS/storage.js"></script>
     <script src="JS/journey.js"></script>
 </body>
 </html>

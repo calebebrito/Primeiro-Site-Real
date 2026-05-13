@@ -1124,7 +1124,7 @@ body {
 }
 
 .ranked {
-    background: linear-gradient(to right,
+    background: linear-gradient(
                 #23E835 10%,
                 #1E3A8A 90%);
     -webkit-background-clip: text;
@@ -1143,16 +1143,8 @@ body {
 }
 
 .rankTxt {
-    margin-left: 65px;
-
-    background: linear-gradient(to right,
-        #FDB982 20%,
-        #ffffff 75%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #FDB982;
-        font-weight: bold;
+    justify-self: center;
+    font-weight: bold;
 
     width: fit-content;
 }
