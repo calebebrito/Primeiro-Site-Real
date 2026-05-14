@@ -450,13 +450,14 @@ body {
     width: 100px;
     padding-top: 10px;
     padding-left: 7px;
+
     background: linear-gradient(
                 #23E835,
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 90px #23E835;
+        0 0 30px #00fd1596;
 }
 
 .goHomeVs3:active {
@@ -481,19 +482,14 @@ body {
     max-width: 580px;   /*RESPONSIVIDADE */
     margin: 0 auto;
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 15px;
     border-radius: 25px;
-    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
-    border: 3px solid transparent;
-    background: 
-        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
-        linear-gradient(#23E835, #1E3A8A) border-box;
-
-    filter:
-    drop-shadow(0 7px 12px #2431bd71);
+    background: #272727ab;
+    backdrop-filter: blur(10px);
 }
 
 .selectMode {
+    width: fit-content;
     font-weight: 10;
     text-align: left;
     font-family: new hope;
@@ -505,7 +501,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
-        0 0 90px #23E835;
+        0 0 30px #00fd1596;
     font-size: 30pt;
 }
 
@@ -513,7 +509,7 @@ body {
     display: flex;
     gap: 23px;
     width: 100%;
-    justify-content: center;
+    align-items: center;
     margin-top: auto;
     padding-bottom: 4px;
 }
@@ -525,14 +521,17 @@ body {
     font-size: 14pt;
     padding: 5px;
     align-content: center;
-    width: 103px;
-    height: 50px;
+    width: 130px;
+    height: 60px;
     border-radius: 25px;
-    box-shadow: 1px 1px 1px 1px rgba(142, 141, 141, 0.151);
-    border: 3px solid transparent;
+    border: none;
+
+    box-shadow: 1px 1px 1px 1px rgba(10, 10, 10, 0.158);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     background: 
-        linear-gradient(#1A1A1A, #1A1A1A) padding-box,
-        linear-gradient(to right, #23E835, #1E3A8A) border-box;
+        linear-gradient(#2a2a2a13, #2a2a2a13) padding-box,
+        linear-gradient(to right, #2a2a2a13, #2a2a2a13) border-box;
     cursor: pointer;
 
     transition: transform 0.2s ease, box-shadow 0.1s ease;
@@ -542,9 +541,13 @@ body {
 .midMode:hover,
 .hardMode:hover,
 .blessedMode:hover {
-    transform: scale(1.07) translate(3px, -3px);
+    transform: scale(1.1);
     filter:
-    drop-shadow(0 7px 12px #2431bd71);
+    drop-shadow(0 2px 5px #1d7e4241);
+
+    background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 3s ease infinite;
 }
 
 .easyMode:active,

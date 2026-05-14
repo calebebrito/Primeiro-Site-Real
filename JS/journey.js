@@ -17,7 +17,7 @@ if (user) {
     const percent = (xp / maxXp) * 100
 
     if (fill) {
-        fill.computedStyleMap.width = percent + "%"
+        fill.style.width = percent + "%"
     }
 
     if (text) {
