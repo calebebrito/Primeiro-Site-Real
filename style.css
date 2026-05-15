@@ -558,6 +558,97 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+#quizSection {
+    justify-content: center;
+}
+
+.quizCard {
+    display: flex;
+    flex-direction: column; 
+    width: 30%;
+    height: 350px;
+    min-width: 300px;
+    max-width: 350px;
+    padding: 15px;
+    border-radius: 23px;
+
+    background: #272727ab;
+    backdrop-filter: blur(10px);
+
+    transform: translateY(60%);
+}
+
+#questionTitle {
+    font-size: 20pt;
+
+    transform: translateY(60%);
+}
+
+#optionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    transform: translateY(65%);
+}
+
+.optionButton {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 14pt;
+
+    padding: 5px;
+    align-content: center;
+    width: 130px;
+    height: 60px;
+    border-radius: 25px;
+    border: none;
+
+    box-shadow: 1px 1px 1px 1px rgba(10, 10, 10, 0.158);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: 
+        linear-gradient(#2a2a2a13, #2a2a2a13) padding-box,
+        linear-gradient(to right, #2a2a2a13, #2a2a2a13) border-box;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, box-shadow 0.1s ease;
+}
+
+.optionButton:hover {
+    transform: scale(1.1);
+    filter:
+    drop-shadow(0 2px 5px #1d7e4241);
+
+    background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 3s ease infinite;
+}
+
+.optionButton:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#nextQuestionButton {
+    font-size: 12pt;
+    color: white;
+
+    bottom: 5px;
+    left: 10px;
+    width: 75%;
+    height: 42px;
+
+    border-radius: 35px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: scale(1.1);
+    border: none;
+
+    background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 3s ease infinite;
+}
 
 
 /* SIGNUP SCREEN */

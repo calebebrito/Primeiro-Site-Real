@@ -119,7 +119,7 @@ modeButtons.forEach(function (button) {
 })
 
 function startQuiz(mode) {
-    selectedQuestions = allQuestions[mode]
+    selectedQuestions = shuffleArray(allQuestions[mode])
 
     currentQuestionIndex = 0
     correctAnswerInQuiz = 0
@@ -145,10 +145,17 @@ function renderQuestion() {
     nextQuestionButton.style.display = "none"
     finishQuizButton.style.display = "none"
 
-    currentQuestion.options.forEach(function (option) {
-        const button = document.createElement("button")
+    const shuffledOptions = shuffleArray(currentQuestion.options)
 
-        button.textContent = option
+    shuffledOptions.forEach(function (option, index) {
+        const button = document.createElement("button")
+        const letters = ["a.", "b.", "c.", "d."]
+
+        button.innerHTML = `
+            <span class="optionLetter">${letters[index]}</span>
+            <span>${option}</span>
+        `
+
         button.classList.add("optionButton")
 
         button.addEventListener("click", function () {
@@ -157,6 +164,21 @@ function renderQuestion() {
 
         optionsContainer.appendChild(button)
     })
+    
+}
+
+function shuffleArray(array) {
+    const shuffled = [...array]
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1))
+
+        const temp = shuffled[i]
+        shuffled[i] = shuffled[randomIndex]
+        shuffled[randomIndex] = temp
+    }
+
+    return shuffled
 }
 
 function checkAnswer(selectedOption, selectedButton) {
@@ -179,7 +201,7 @@ function checkAnswer(selectedOption, selectedButton) {
 
     if (selectedOption === currentQuestion.correctAnswer) {
         correctAnswerInQuiz++
-        feedbackText.textContent = "Correct!"
+        feedbackText.textContent = `Correct! +${xpByMode[selectedMode]} XP` 
         selectedButton.classList.add("correctOption")
     } else {
         feedbackText.textContent = "Wrong!"
