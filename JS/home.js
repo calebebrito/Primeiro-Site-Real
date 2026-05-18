@@ -33,6 +33,7 @@ const isLoggedIn = localStorage.getItem("versusLoggedIn")
 
 const authButtons = document.querySelector("#authButtons")
 const logoutButton = document.querySelector(".logout")
+const playQuiz = document.querySelector("#playQuizButton")
 
 
 if (savedUser && isLoggedIn === "true") {
@@ -40,6 +41,8 @@ if (savedUser && isLoggedIn === "true") {
 
     accountName.textContent = `Hello, ${user.username}`
     accountLevel.textContent = `Level ${user.level}`
+
+    playQuiz.style.display = "flex"
 
     if (authButtons) {
         authButtons.style.display = "none"

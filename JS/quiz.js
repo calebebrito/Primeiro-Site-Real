@@ -45,7 +45,7 @@ const allQuestions = {
     medium: [
         {
             question: "How many days did God take to create the world?",
-            options: ["3", "5", "6", "10"],
+            options: ["3", "5", "6", "7"],
             correctAnswer: "6"
         },
         {
@@ -201,7 +201,7 @@ function checkAnswer(selectedOption, selectedButton) {
 
     if (selectedOption === currentQuestion.correctAnswer) {
         correctAnswerInQuiz++
-        feedbackText.textContent = `Correct! +${xpByMode[selectedMode]} XP` 
+        feedbackText.textContent = `+${xpByMode[selectedMode]} XP` 
         selectedButton.classList.add("correctOption")
     } else {
         feedbackText.textContent = "Wrong!"
