@@ -300,3 +300,11 @@ function getLevelTitle(level) {
 
     return "(Beginner)"
 }
+
+
+//DAILY STREAK
+const streakCount = document.querySelector("#streakCount")
+
+if (currentUser) {
+    streakCount.textContent = currentUser.dailyStreak
+}

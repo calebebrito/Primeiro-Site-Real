@@ -73,6 +73,9 @@ signupForm.addEventListener ("submit", function (event) {
         
         correctAnswers: 0,
 
+        dailyStreak: 1,
+        lastLoginDate: new Date().toDateString(),
+
         createdAt: new Date().toISOString()
     }
 

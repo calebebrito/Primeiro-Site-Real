@@ -479,6 +479,111 @@ body {
     margin: 0 auto;
 }
 
+.streakPopup {
+    position: fixed;
+
+    top: 25px;
+    right: 25px;
+
+    width: 280px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: rgba(18, 18, 18, 0.95);
+
+    border: 2px solid #23E835;
+
+    box-shadow:
+        0 0 15px rgba(35, 232, 53, 0.35),
+        0 0 30px rgba(30, 58, 138, 0.25);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 9999;
+
+    opacity: 0;
+    transform: translateY(-20px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+    animation: streakGlow 2s infinite;
+}
+
+.streakPopup.showPopup {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.streakTitle {
+    font-size: 16pt;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+    color: #23E835;
+}
+
+#streakMessage {
+    color: white;
+    font-size: 12pt;
+}
+
+.closePopupButton {
+    margin-top: 18px;
+
+    width: 100%;
+    height: 42px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg, #23E835, #1E3A8A);
+
+    color: white;
+    font-size: 12pt;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.closePopupButton:hover {
+    transform: scale(1.03);
+
+    filter:
+        drop-shadow(0 0 8px rgba(35, 232, 53, 0.45));
+}
+
+.closePopupButton:active {
+    transform: scale(0.96);
+}
+
+@keyframes streakGlow {
+    0% {
+        box-shadow:
+            0 0 10px rgba(35, 232, 53, 0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(35, 232, 53, 0.55);
+    }
+
+    100% {
+        box-shadow:
+            0 0 10px rgba(35, 232, 53, 0.25);
+    }
+}
+
 
 /* QUIZ SCREEN */
 
