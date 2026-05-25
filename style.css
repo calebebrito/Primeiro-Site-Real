@@ -215,6 +215,20 @@ header {
     transition: transform 0.2 ease, box-shadow 0.2 ease;
 }
 
+.showDailyStreak {
+    display: flex;
+    font-family: new hope;
+    cursor: pointer;
+
+    padding: 5px;
+    width: 90%;
+    position: absolute;
+    bottom: 60px;
+    left: 16px;
+
+    transition: transform 0.2 ease, box-shadow 0.2 ease;
+}
+
 .playIcon,
 .mapIcon,
 .targetIcon,
@@ -233,6 +247,10 @@ header {
     filter: invert(1);
 }
 
+.fireIcon {
+    font-size: 14pt;
+}
+
 .playTxt, 
 .questsTxt,
 .versusTxt,
@@ -244,6 +262,12 @@ header {
 .logoutTxt {
     margin-top: 12px;
     color: white;
+}
+
+.streakTxt {
+    color: white;
+    padding-top: 8px;
+    padding-left: 4px;
 }
 
 .playQuiz:hover {
@@ -314,6 +338,17 @@ header {
 }
 
 .logout:active {
+    transform: scale(0.95);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.11);
+}
+
+.showDailyStreak:hover {
+    background-color: rgba(0, 0, 0, 0.19);
+    border-radius: 7px 0px 0px 7px;
+    transform: scale(1.05) translate(-3px, -3px);
+}
+
+.showDailyStreak:active {
     transform: scale(0.95);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.11);
 }
@@ -479,7 +514,7 @@ body {
     margin: 0 auto;
 }
 
-.streakPopup {
+#streakPopup {
     position: fixed;
 
     top: 25px;
@@ -506,8 +541,6 @@ body {
     opacity: 0;
     transform: translateY(-20px);
 
-    pointer-events: none;
-
     transition:
         opacity 0.4s ease,
         transform 0.4s ease;
@@ -515,7 +548,7 @@ body {
     animation: streakGlow 2s infinite;
 }
 
-.streakPopup.showPopup {
+#streakPopup.showPopup {
     opacity: 1;
     transform: translateY(0);
 }
@@ -534,7 +567,7 @@ body {
     font-size: 12pt;
 }
 
-.closePopupButton {
+#closeStreakPopup {
     margin-top: 18px;
 
     width: 100%;
@@ -554,16 +587,18 @@ body {
     transition:
         transform 0.2s ease,
         filter 0.2s ease;
+
+    z-index: 10000;
 }
 
-.closePopupButton:hover {
+#closeStreakPopup:hover {
     transform: scale(1.03);
 
     filter:
         drop-shadow(0 0 8px rgba(35, 232, 53, 0.45));
 }
 
-.closePopupButton:active {
+#closeStreakPopup:active {
     transform: scale(0.96);
 }
 

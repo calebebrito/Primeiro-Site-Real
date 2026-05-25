@@ -6,8 +6,7 @@
     <title>Versus</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
-    <img id="menuButton" src="images/menu3-removebg-preview.png" alt="menu button">
+<body> <img id="menuButton" src="images/menu3-removebg-preview.png" alt="menu button">
 
     <div class="menu">
         <div id="overlay"></div>
@@ -24,8 +23,6 @@
                 </div>
             </a>
 
-            <div>
-                
             <a href="quizScreen.html">
                 <div class="playQuiz">
                     <p class="playIcon">▶️</p>
@@ -57,8 +54,10 @@
                 <p class="rankingTxt">Ranking</p>
             </div>
 
-
-
+            <div class="showDailyStreak">
+                <p class="fireIcon">🔥</p>
+                <p class="streakTxt">Daily streak</p>
+            </div>
 
             <div class="logout">
                 <img class="logoutIcon" src="images/logout-icon-removebg-preview.png" alt="logout-icon">
@@ -67,8 +66,7 @@
         </div>    
     </div>
 
-<header class="arial">
-
+    <header class="arial">
         <div id="accountBox" class="arial">
             <div class="accountInfo">
                 <p id="accountName">Hello, guest</p>
@@ -76,67 +74,57 @@
             </div>
         </div>
 
-            <div id="versus">
-                <i>VERSUS</i>
-            </div>
-            
-            <h2>A fun way to learn the bible.</h2>
-
-            <a href="quizScreen.html">
-                <button id="playQuizButton" style="display: none;">
-                    Play Quiz
-                </button>
-            </a>
+        <div id="versus">
+            <i>VERSUS</i>
+        </div>
         
+        <h2>A fun way to learn the bible.</h2>
+
+        <a href="quizScreen.html">
+            <button id="playQuizButton" style="display: none;">
+                Play Quiz
+            </button>
+        </a>
+    
         <div class="buttons" id="authButtons">
             <a href="signUpScreen.html">
-                <div>
-                    <div class="logButton arial">
-                        <p>Sign Up</p>
-                    </div>
-            </a>
-        </div>
-
-            <div class="logButton arial">
+                <div class="logButton arial">
+                    <p>Sign Up</p>
+                </div>
+            </a> <div class="logButton arial">
                 <a href="logInScreen.html" style="color: white;">
                     <p>Log In</p>
                 </a>
             </div>
         </div>
+    </header>
 
-</header>
-
-<body>
-   
     <section class="why arial">
-        <p>Why choose <p class="whyVersus"><i>VERSUS</i></p>?</p>
+        <p>Why choose </p>
+        <p class="whyVersus"><i>VERSUS</i></p>?
     </section>
 
     <div class="whyImages">
-    <img src="images/cifrao.png" alt="cifrão">
-    <img src="images/biblia-removebg-preview.png" alt="bíblia">
-    <img src="images/interrogation.png" alt="interrogação">
-</div>
+        <img src="images/cifrao.png" alt="cifrão">
+        <img src="images/biblia-removebg-preview.png" alt="bíblia">
+        <img src="images/interrogation.png" alt="interrogação">
+    </div>
 
-<div class="WhyCaption arial">
-    <p>Free to play.</p>
-    <p>Improve your bible knowledge.</p>
-    <p>Hundreds of quizzes available.</p>
-</div>
-
+    <div class="WhyCaption arial">
+        <p>Free to play.</p>
+        <p>Improve your bible knowledge.</p>
+        <p>Hundreds of quizzes available.</p>
+    </div>
 
     <div id="streakPopup" class="streakPopup">
         <p class="streakTitle arial">🔥 Daily Streak</p>
-
         <p id="streakMessage" class="arial">
             You are on a 1 day streak!
         </p>
-
         <button id="closeStreakPopup" class="closePopupButton arial">
             OK
         </button>
     </div>
-
 
     <script src="JS/storage.js"></script>
     <script src="JS/home.js"></script>

@@ -92,20 +92,48 @@ if (currentUser) {
 
 const streakPopup = document.querySelector("#streakPopup")
 const streakMessage = document.querySelector("#streakMessage")
+const closeStreakPopup = document.querySelector("#closeStreakPopup")
+
+const today = new Date().toDateString()
+
+const lastPopupDate =
+    localStorage.getItem("versusLastStreakPopup")
 
 if (streakPopup && currentUser) {
-    streakMessage.textContent = 
-    `You are on a ${currentUser.dailyStreak} day streak!`
 
-    setTimeout(function () {
-        streakPopup.classList.add("showPopup")
-    }, 300)
+    streakMessage.textContent =
+        `You are on a ${currentUser.dailyStreak} day streak!`
 
-    const closeStreakPopup = document.querySelector("#closeStreakPopup")
+    // aparece só uma vez por dia
+    if (lastPopupDate !== today) {
+
+        setTimeout(function () {
+
+            streakPopup.classList.add("showPopup")
+
+        }, 300)
+
+        localStorage.setItem(
+            "versusLastStreakPopup",
+            today
+        )
+    }
+}
 
 if (closeStreakPopup) {
+
     closeStreakPopup.addEventListener("click", function () {
+
         streakPopup.classList.remove("showPopup")
+
+    })
+
+}
+
+const showDailyStreak = document.querySelector(".showDailyStreak")
+
+if (showDailyStreak) {
+    showDailyStreak.addEventListener("click", function() {
+        streakPopup.classList.add("showPopup")
     })
   }
-}
