@@ -48,10 +48,6 @@ if (savedUser && isLoggedIn === "true") {
         authButtons.style.display = "none"
     }
 
-    if (logoutButton) {
-        logoutButton.style.button = "block"
-    }
-
 } else {
     accountName.textContent = "Hello, guest"
     accountLevel.textContent = ""

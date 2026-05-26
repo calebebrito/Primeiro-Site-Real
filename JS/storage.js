@@ -21,7 +21,6 @@ function saveCurrentUser(updateUser) {
         if (user.email === updateUser.email) {
             return updateUser
         }
-
         return user
     })
 
@@ -29,111 +28,95 @@ function saveCurrentUser(updateUser) {
     localStorage.setItem("versusUser", JSON.stringify(updateUser))
 }
 
-const currentUser = JSON.parse(localStorage.getItem("versusUser"))
+const currentUser = getCurrentUser()
+
+// Declaração global da string da data de hoje para usar no arquivo todo
+const todayStr = new Date().toDateString() 
 
 if (currentUser) {
-    const today = new Date().toDateString()
-
     const lastLogin = currentUser.lastLoginDate
 
-    //Evita bug caso conta antiga nao tenha streak
+    // Evita bug caso conta antiga nao tenha streak
     if (!currentUser.dailyStreak) {
         currentUser.dailyStreak = 1
     }
 
-    if (!currentUser) {
-        currentUser.lastLoginDate = today
+    if (!currentUser.lastLoginDate) {
+        currentUser.lastLoginDate = todayStr
     }
 
-    const todayDate = new Date(today)
+    const todayDate = new Date(todayStr)
     const lastLoginDate = new Date(lastLogin)
 
     const differenceInTime = todayDate - lastLoginDate
+    
+    // CORREÇÃO: Math.round evita problemas com fusos horários e números quebrados (ex: 0.98 dias)
+    const differenceInDays = Math.round(differenceInTime / (1000 * 60 * 60 * 24))
 
-    const differenceInDays = 
-        differenceInTime / (1000 * 60 *60 * 24)
-
-
-    //Entrou no dia seguinte
-    if (differenceInDays >= 1 && differenceInDays < 2) {
+    // Entrou no dia seguinte
+    if (differenceInDays === 1) {
         currentUser.dailyStreak += 1
     }
 
-    //Perdeu a streak
+    // Perdeu a streak (2 ou mais dias sem entrar)
     if (differenceInDays >= 2) {
         currentUser.dailyStreak = 1
     }
 
-    //Salva a data atual
-    currentUser.lastLoginDate = today
+    if (!currentUser.higherStreak) {
+        currentUser.higherStreak = currentUser.dailyStreak
+    }
 
-    //Salva usuario atual
-    localStorage.setItem(
-        "versusUser",
-        JSON.stringify(currentUser)
-    )
+    if (currentUser.dailyStreak > currentUser.higherStreak) {
+        currentUser.higherStreak = currentUser.dailyStreak
+    }
 
-    //Atualiza lista de usuarios
+    // Salva a data atual
+    currentUser.lastLoginDate = todayStr
+
+    // Salva usuario atual
+    localStorage.setItem("versusUser", JSON.stringify(currentUser))
+
+    // Atualiza lista de usuarios
     const users = JSON.parse(localStorage.getItem("versusUsers")) || []
-
     const updatedUsers = users.map(function(user) {
         if (user.email === currentUser.email) {
             return currentUser
         }
-
         return user
     })
 
-    localStorage.setItem(
-        "versusUsers",
-        JSON.stringify(updatedUsers)
-    )
+    localStorage.setItem("versusUsers", JSON.stringify(updatedUsers))
 }
 
 const streakPopup = document.querySelector("#streakPopup")
 const streakMessage = document.querySelector("#streakMessage")
 const closeStreakPopup = document.querySelector("#closeStreakPopup")
 
-const today = new Date().toDateString()
-
-const lastPopupDate =
-    localStorage.getItem("versusLastStreakPopup")
+const lastPopupDate = localStorage.getItem("versusLastStreakPopup")
 
 if (streakPopup && currentUser) {
+    streakMessage.textContent = `You are on a ${currentUser.dailyStreak} day streak!`
 
-    streakMessage.textContent =
-        `You are on a ${currentUser.dailyStreak} day streak!`
-
-    // aparece só uma vez por dia
-    if (lastPopupDate !== today) {
-
+    // CORREÇÃO: Usando a variável global todayStr corrigida
+    if (lastPopupDate !== todayStr) {
         setTimeout(function () {
-
             streakPopup.classList.add("showPopup")
-
         }, 300)
-
-        localStorage.setItem(
-            "versusLastStreakPopup",
-            today
-        )
     }
 }
 
 if (closeStreakPopup) {
-
     closeStreakPopup.addEventListener("click", function () {
-
         streakPopup.classList.remove("showPopup")
-
+        // CORREÇÃO: Usando a variável global todayStr corrigida
+        localStorage.setItem("versusLastStreakPopup", todayStr)
     })
-
 }
 
 const showDailyStreak = document.querySelector(".showDailyStreak")
-
-if (showDailyStreak) {
+if (showDailyStreak && streakPopup) {
     showDailyStreak.addEventListener("click", function() {
         streakPopup.classList.add("showPopup")
     })
-  }
+}

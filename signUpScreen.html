@@ -23,22 +23,26 @@
             <form id="signupForm">
                 <div class="emailInput arial">
                     <img src="images/email-icon.png" alt="email icon">
-                    <input id="signupEmail" type="email" placeholder="Email" required>
+                    <input id="signupEmail" type="email" placeholder="Email">
                 </div>
+                <span class="inputError" id="emailError"></span>
                 
                 <div class="passInput arial">
                     <img src="images/lock-icon.png" alt="lock icon">
-                    <input id="signupPassword" type="password" placeholder="Password" required>
+                    <input id="signupPassword" type="password" placeholder="Password">
                 </div>
+                <span class="inputError" id="passwordError"></span>
                 
                 <div class="passInput arial">
                     <img src="images/lock-icon.png" alt="lock icon">
-                    <input id="confirmPassword" type="password" placeholder="Confirm Password" required>
+                    <input id="confirmPassword" type="password" placeholder="Confirm Password">
                 </div>
+                <span class="inputError" id="confirmPasswordError"></span>
                 
                     <div class="g-recaptcha"
                         data-sitekey="6Lf8544sAAAAAGBhXIV1qGjpl5NZ4hB3LYSf314u">
                     </div>
+                    <span class="captchaError" id="captchaError"></span>
                 
                 <button type="submit" class="createLogBut">
                     <p class="arial">Create Account</p>

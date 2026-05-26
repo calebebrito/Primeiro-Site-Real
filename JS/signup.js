@@ -1,3 +1,7 @@
+const emailError = document.querySelector("#emailError")
+const passwordError = document.querySelector("#passwordError")
+const confirmPasswordError = document.querySelector("#confirmPasswordError")
+const captchaError = document.querySelector("#captchaError")
 const signupForm = document.querySelector('#signupForm')
 
 signupForm.addEventListener ("submit", function (event) {
@@ -11,25 +15,52 @@ signupForm.addEventListener ("submit", function (event) {
     const password = passwordInput.value.trim()
     const confirmPassword = confirmPasswordInput.value.trim()
 
+    emailError.textContent = ""
+    passwordError.textContent = ""
+    confirmPasswordError.textContent = ""
+    captchaError.textContent = ""
+
+    emailInput.classList.remove("inputInvalid")
+    passwordInput.classList.remove("inputInvalid")
+    confirmPasswordInput.classList.remove("inputInvalid")
+
+    if (!email) {
+        emailError.textContent = "Email is required!"
+        emailInput.classList.add("inputInvalid")
+    }
+
+    if (!password) {
+        passwordError.textContent = "Password is required!"
+        passwordInput.classList.add("inputInvalid")
+    }
+
+    if (!confirmPassword) {
+        confirmPasswordError.textContent = "Please confirm your password!"
+        confirmPasswordInput.classList.add("inputInvalid")
+    }
+
     if (!email || !password || !confirmPassword) {
-        alert ("Please fill in all fields!")
         return
     }
 
     if (password.length < 6) {
-        alert ("Password must contain at least 6 characters!")
+        passwordError.textContent = "Password must contain at least 6 characters!"
+
+        passwordInput.classList.add("inputInvalid")
         return
     }
 
     if (password !== confirmPassword) {
-        alert ("Passwords do not match!")
+        confirmPasswordError.textContent = "Passwords do not match!"
+
+        confirmPasswordInput.classList.add("inputInvalid")
         return
     }
 
     const recaptchaResponse = grecaptcha.getResponse()
 
     if (!recaptchaResponse) {
-        alert ("Please confirm that you are not a robot!")
+        captchaError.textContent = "Please confirm that you are not a robot!"
         return
     }
 
@@ -37,11 +68,13 @@ signupForm.addEventListener ("submit", function (event) {
     const users = savedUsers ? JSON.parse(savedUsers) : []
 
     const existingEmail = users.some (function(user) {
-        return user.email === email
+        return user.email.toLowerCase() === email.toLowerCase()
     })
 
     if (existingEmail) {
-        alert ("This email is already registered")
+        emailError.textContent = "This email is already registered"
+
+        emailInput.classList.add("inputInvalid")
         return
     }
 
@@ -56,7 +89,7 @@ signupForm.addEventListener ("submit", function (event) {
 
         completedQuizzes: 0,
         blessedQuizzes: 0,
-        higherStreak: 0,
+        highestStreak: 1,
         achievementsUnlocked: 0,
         globalRanking: "Unranked",
         titlesUnlocked: 0,

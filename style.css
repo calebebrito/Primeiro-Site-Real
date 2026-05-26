@@ -526,14 +526,7 @@ body {
 
     border-radius: 18px;
 
-    background: rgba(18, 18, 18, 0.95);
-
-    border: 2px solid #23E835;
-
-    box-shadow:
-        0 0 15px rgba(35, 232, 53, 0.35),
-        0 0 30px rgba(30, 58, 138, 0.25);
-
+    background: rgba(18, 18, 18, 0.753);
     backdrop-filter: blur(10px);
 
     z-index: 9999;
@@ -567,6 +560,14 @@ body {
     font-size: 12pt;
 }
 
+#streakPopup > strong {
+    color: #5eff00;
+    text-shadow: 
+        0 0 5px #73ff00;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #closeStreakPopup {
     margin-top: 18px;
 
@@ -576,7 +577,13 @@ body {
     border: none;
     border-radius: 14px;
 
-    background: linear-gradient(135deg, #23E835, #1E3A8A);
+    box-shadow: 2px 2px 2px 2px rgba(10, 10, 10, 0.158);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: 
+        linear-gradient(#2a2a2a20, #2a2a2a20) padding-box,
+        linear-gradient(to right, #2a2a2a20, #2a2a2a20) border-box;
+    cursor: pointer;
 
     color: white;
     font-size: 12pt;
@@ -587,15 +594,16 @@ body {
     transition:
         transform 0.2s ease,
         filter 0.2s ease;
-
-    z-index: 10000;
 }
 
 #closeStreakPopup:hover {
     transform: scale(1.03);
-
     filter:
-        drop-shadow(0 0 8px rgba(35, 232, 53, 0.45));
+    drop-shadow(0 2px 5px #1d7e4241);
+
+    background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 3s ease infinite;
 }
 
 #closeStreakPopup:active {
@@ -890,7 +898,22 @@ body {
     padding-top: 20px;
 }
 
+
+
 /* SIGNUP SCREEN */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+
+    -webkit-box-shadow: 0 0 0 30px #1B1C1F inset !important;
+
+    -webkit-text-fill-color: white !important;
+
+    transition: background-color 9999s ease-in-out 0s;
+}
+
 
 
 .goHomeVs2 {
@@ -926,11 +949,14 @@ body {
 
 .signCard {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    justify-content: flex-start;
     width: 30%;
-    height: 500px;
+    min-height: 350px;
+    height: auto;
     min-width: 300px;
-    max-width: 460px;
+    max-width: 350px;
+
     padding: 10px;
     border-radius: 23px;
 
@@ -955,6 +981,7 @@ body {
 
 .create {
     font-size: 20pt;
+
     background: linear-gradient(
                 #23E835,
                 #1E3A8A);
@@ -965,19 +992,21 @@ body {
         font-weight: bold;
 
     margin-left: -15%;
+    margin-bottom: 15px;
 }
 
 .emailInput,
 .passInput {
-    margin-top: 20px;
     padding: 10px;
-    background-color: rgba(27, 27, 27, 0.521);
+    background-color: #1b1b1b85;
     width: 90%;
     height: 40px;
     border-radius: 8px;
     justify-content: center;
     text-align: left;
     transform: translateX(2%);
+
+    caret-color: white;
 }
 
 .emailInput > img {
@@ -1022,10 +1051,48 @@ body {
     width: fit-content;
 }
 
+.inputError {
+    display: block;
+
+    width: 90%;
+
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+
+    text-align: left;
+
+    color: #ff4d4d;
+    font-size: 9pt;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 14px;
+}
+
+.captchaError {
+    display: block;
+
+    width: 90%;
+
+    margin-left: 13px;
+    padding-bottom: 20px;
+
+    text-align: center;
+
+    color: #ff4d4d;
+    font-size: 9pt;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 14px;
+}
+
+.inputInvalid {
+    border: 1px solid #ff4d4d !important;
+}
+
 .createLogBut {
     font-size: 12pt;
     width: 75%;
-    height: 42px;
+    height: 50px;
+    margin-bottom: 5px;
 
     border-radius: 35px;
     box-shadow: 2px 2px 2px 2px rgba(10, 10, 10, 0.158);
