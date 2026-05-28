@@ -1,9 +1,19 @@
 const user = getCurrentUser()
 
-// Importante: certifique-se de que este script só roda na página da jornada!
+// Certificar que roda somente em journey
 if (!user) {
-    alert("You need to log in first!")
-    window.location.href = "logInScreen.html"
+    const loginWarning = document.querySelector(".loginWarning")
+    const closeLoginWarning = document.querySelector(".closeLoginWarning")
+    const popupOverlay = document.querySelector(".popupOverlay")
+
+    loginWarning.classList.add("showPopup")
+    popupOverlay.classList.add("showOverlay")
+
+    closeLoginWarning.addEventListener("click", function () {
+        window.location.href = "logInScreen.html"
+    })
+
+    throw new Error("User not logged in")
 }
 
 //Daily Streak

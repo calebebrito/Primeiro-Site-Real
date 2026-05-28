@@ -1,8 +1,18 @@
 const user = getCurrentUser()
 
 if (!user) {
-    alert ("You need to log in first!")
-    window.location.href = "loginScreen.html"
+    const loginWarning = document.querySelector(".loginWarning")
+    const closeLoginWarning = document.querySelector(".closeLoginWarning")
+    const popupOverlay = document.querySelector(".popupOverlay")
+
+    loginWarning.classList.add("showPopup")
+    popupOverlay.classList.add("showOverlay")
+
+    closeLoginWarning.addEventListener("click", function() {
+        window.location.href = "logInScreen.html"
+    })
+
+    throw new Error("User not logged in")
 }
 
 const modeSection = document.querySelector("#modeSection")
@@ -222,12 +232,6 @@ function nextQuestion() {
 
 function finishQuiz() {
     const currentUser = getCurrentUser()
-
-    if(!currentUser) {
-        alert ("You need to log in first!")
-        window.location.href = "loginScreen.html"
-        return
-    }
 
     const xpPerCorrectAnswer = xpByMode[selectedMode]
     const perfectBonus = correctAnswerInQuiz === selectedQuestions.length ? xpPerCorrectAnswer * 2 : 0

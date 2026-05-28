@@ -7,11 +7,30 @@ if (loginForm) {
         const emailInput = document.querySelector("#loginEmail")
         const passwordInput = document.querySelector("#loginPassword")
 
+        const emailError = document.querySelector("#emailError")
+        const passwordError = document.querySelector("#passwordError")
+
         const email = emailInput.value.trim()
         const password = passwordInput.value.trim()
 
+        emailError.textContent = ""
+        passwordError.textContent = ""
+
+        emailInput.classList.remove("inputInvalid")
+        passwordInput.classList.remove("inputInvalid")
+
+
+        if (!email) {
+            emailError.textContent = "Email is required!"
+            emailInput.classList.add("inputInvalid")
+        }
+
+        if (!password) {
+            passwordError.textContent = "Password is required!"
+            passwordInput.classList.add("inputInvalid")
+        }
+
         if (!email || !password) {
-            alert ("Please fill in all the fields!")
             return
         }
 
@@ -23,7 +42,10 @@ if (loginForm) {
         })
 
         if (!foundUser) {
-            alert ("Incorrect email or password!")
+            passwordError.textContent = "Incorrect email or password!"
+
+            emailInput.classList.add("inputInvalid")
+            passwordInput.classList.add("inputInvalid")
             return
         }
 
