@@ -27,6 +27,17 @@ const feedbackText = document.querySelector("#feedbackText")
 const nextQuestionButton = document.querySelector("#nextQuestionButton")
 const finishQuizButton = document.querySelector("#finishQuizButton")
 
+const quizFinishPopup = document.querySelector("#quizFinishPopup")
+const quizFinishOverlay = document.querySelector("#quizFinishOverlay")
+const finalScore = document.querySelector("#finalScore")
+const earnedXpText = document.querySelector("#earnedXpText")
+const closeQuizFinish = document.querySelector("#closeQuizFinish")
+
+const levelUpPopup = document.querySelector("#levelUpPopup")
+const levelUpOverlay = document.querySelector("#levelUpOverlay")
+const newLevelText = document.querySelector("#newLevelText")
+const closeLevelUp = document.querySelector("#closeLevelUp")
+
 let selectedMode = ""
 let selectedQuestions = []
 let currentQuestionIndex = 0
@@ -115,10 +126,10 @@ const modeNames = {
 }
 
 const xpByMode = {
-    easy: 20,
-    medium: 30,
-    hard: 45,
-    blessed: 60
+    easy: 10,
+    medium: 15,
+    hard: 25,
+    blessed: 50
 }
 
 modeButtons.forEach(function (button) {
@@ -214,7 +225,6 @@ function checkAnswer(selectedOption, selectedButton) {
         feedbackText.textContent = `+${xpByMode[selectedMode]} XP` 
         selectedButton.classList.add("correctOption")
     } else {
-        feedbackText.textContent = "Wrong!"
         selectedButton.classList.add("wrongOption")
     }
 
@@ -254,7 +264,11 @@ function finishQuiz() {
         currentUser.blessedQuizzes++
     }
 
+    let leveledUp = false
+
     while (currentUser.xp >= currentUser.maxXp) {
+        leveledUp = true
+
         currentUser.xp -= currentUser.maxXp
         currentUser.level++
         currentUser.maxXp = Math.floor(currentUser.maxXp * 1.25)
@@ -262,9 +276,46 @@ function finishQuiz() {
 
     saveCurrentUser(currentUser)
 
-    alert (`Quiz completed! You got ${correctAnswerInQuiz}/${selectedQuestions.length} correct answers and earned ${earnedXp} XP.`)
+    if (perfectBonus > 0) {
 
-    window.location.href = "JourneyScreen.html"
+        earnedXpText.innerHTML = `
+        <span class="perfectBonusText">
+            PERFECT QUIZ! DOUBLE XP BONUS!
+        </span> <br> <br>
+        +${earnedXp} XP earned
+        `
+
+        earnedXpText.style.color = "#5eff00"
+
+
+    } else {
+        earnedXpText.textContent = `+${earnedXp} XP earned`
+        earnedXpText.style.color = "#5eff00"
+    }
+
+    quizFinishPopup.classList.add("showPopup")
+    quizFinishOverlay.classList.add("showOverlay")
+
+    closeQuizFinish.addEventListener("click", function() {
+        quizFinishPopup.classList.remove("showPopup")
+        quizFinishOverlay.classList.remove("showOverlay")
+
+        if (leveledUp) {
+        setTimeout(function() {
+            newLevelText.innerHTML = `Congratulations<br>You reached level ${currentUser.level}!`
+
+            levelUpPopup.classList.add("showPopup")
+            levelUpOverlay.classList.add("showOverlay")
+        }, 250)
+    } else {
+        window.location.href = "JourneyScreen.html"
+    }
+
+    })
+
+    closeLevelUp.addEventListener("click", function() {
+        window.location.href = "JourneyScreen.html"
+    })
 }
 
 nextQuestionButton.addEventListener("click", nextQuestion)
