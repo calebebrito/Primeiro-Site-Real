@@ -1,46 +1,53 @@
 const user = getCurrentUser()
 
-// Certificar que roda somente em journey
+// 1. CERTIFICAR QUE RODA SOMENTE EM JOURNEY (Movido para o topo)
 if (!user) {
     const loginWarning = document.querySelector(".loginWarning")
     const closeLoginWarning = document.querySelector(".closeLoginWarning")
     const popupOverlay = document.querySelector(".popupOverlay")
 
-    loginWarning.classList.add("showPopup")
-    popupOverlay.classList.add("showOverlay")
+    if (loginWarning) loginWarning.classList.add("showPopup")
+    if (popupOverlay) popupOverlay.classList.add("showOverlay")
 
-    closeLoginWarning.addEventListener("click", function () {
-        window.location.href = "logInScreen.html"
-    })
+    if (closeLoginWarning) {
+        closeLoginWarning.addEventListener("click", function () {
+            window.location.href = "logInScreen.html"
+        })
+    }
 
     throw new Error("User not logged in")
 }
 
-//Daily Streak
-const dailyStreakCount = document.querySelector("#dailyStreakCount")
+// 2. CÁLCULO DA ACURÁCIA (Agora garantido que o 'user' existe)
+let accuracy = 0
+const totalQuestionsAnswered = user.totalQuestionsAnswered || 0
 
-if (dailyStreakCount && user) {
+if (totalQuestionsAnswered > 0) {
+    accuracy = Math.round((user.correctAnswers / totalQuestionsAnswered) * 100)
+}
+
+// 3. DAILY STREAK
+const dailyStreakCount = document.querySelector("#dailyStreakCount")
+if (dailyStreakCount) {
     dailyStreakCount.textContent = user.dailyStreak || 0
 }
 
-// PROGRESS / LEVEL
+// 4. PROGRESS / LEVEL
 const fill = document.querySelector("#xpFill")
 const text = document.querySelector("#xpTxt")
 const journeyLevel = document.querySelector("#journeyLevel")
 const journeyTitle = document.querySelector("#journeyTitle")
 
-if (user) {
-    const xp = user.xp || 0
-    const maxXp = user.maxXp || 100
-    const percent = (xp / maxXp) * 100
+const xp = user.xp || 0
+const maxXp = user.maxXp || 100
+const percent = (xp / maxXp) * 100
 
-    if (fill) fill.style.width = percent + "%"
-    if (text) text.textContent = xp + " / " + maxXp + " XP"
-    if (journeyLevel) journeyLevel.textContent = `Level ${user.level}`
-    if (journeyTitle) journeyTitle.textContent = getLevelTitle(user.level)
-}
+if (fill) fill.style.width = percent + "%"
+if (text) text.textContent = xp + " / " + maxXp + " XP"
+if (journeyLevel) journeyLevel.textContent = `Level ${user.level || 1}`
+if (journeyTitle) journeyTitle.textContent = getLevelTitle(user.level || 1)
 
-// STATS
+// 5. STATS & WIN PERCENTAGE (Protegidos contra elementos nulos)
 const completedQuizzes = document.querySelector("#completedQuizzes")
 const blessedQuizzes = document.querySelector("#blessedQuizzes")
 const higherStreak = document.querySelector("#highestStreak")
@@ -51,17 +58,19 @@ const winPercentage = document.querySelector("#winPercentage")
 const favoriteMode = document.querySelector("#favoriteMode")
 const favoriteDifficulty = document.querySelector("#favoriteDifficulty")
 
-if (user) {
-    if (completedQuizzes) completedQuizzes.textContent = user.completedQuizzes || 0
-    if (blessedQuizzes) blessedQuizzes.textContent = user.blessedQuizzes || 0
-    if (higherStreak) higherStreak.textContent = user.higherStreak || 0
-    if (achievementsUnlocked) achievementsUnlocked.textContent = user.achievementsUnlocked || 0
-    if (globalRanking) globalRanking.textContent = user.globalRanking || "Unranked"
-    if (titlesUnlocked) titlesUnlocked.textContent = user.titlesUnlocked || 0
-    if (winPercentage) winPercentage.textContent = `${user.winPercentage || 0}%`
-    if (favoriteMode) favoriteMode.textContent = user.favoriteMode || "None"
-    if (favoriteDifficulty) favoriteDifficulty.textContent = user.favoriteDifficulty || "None"
+// Atualiza a porcentagem de vitória se o elemento existir na tela
+if (winPercentage) {
+    winPercentage.textContent = `${accuracy}%`
 }
+
+if (completedQuizzes) completedQuizzes.textContent = user.completedQuizzes || 0
+if (blessedQuizzes) blessedQuizzes.textContent = user.blessedQuizzes || 0
+if (higherStreak) higherStreak.textContent = user.higherStreak || 0
+if (achievementsUnlocked) achievementsUnlocked.textContent = user.achievementsUnlocked || 0
+if (globalRanking) globalRanking.textContent = user.globalRanking || "Unranked"
+if (titlesUnlocked) titlesUnlocked.textContent = user.titlesUnlocked || 0
+if (favoriteMode) favoriteMode.textContent = user.favoriteMode || "None"
+if (favoriteDifficulty) favoriteDifficulty.textContent = user.favoriteDifficulty || "None"
 
 // RANK IMAGE / RANK TEXT
 const rankImage = document.querySelector("#rankImage")

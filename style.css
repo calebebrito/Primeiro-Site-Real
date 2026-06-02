@@ -770,7 +770,7 @@ body {
 #questionTitle {
     font-size: 20pt;
 
-    transform: translateY(30%);
+    transform: translateY(15%);
 }
 
 #optionsContainer {
@@ -2098,4 +2098,129 @@ input:-webkit-autofill:active {
 
     background: #272727ab;
     backdrop-filter: blur(10px);
+}
+
+.comingSoon {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(0.9);
+
+    width: 320px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(20,20,20,0.95);
+
+    backdrop-filter: blur(12px);
+
+    text-align: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.25s ease;
+
+    z-index: 9999;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 0 25px rgba(35,232,53,0.15);
+}
+
+.comingSoon.showPopup {
+    opacity: 1;
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+.underConstruction {
+    transform: scale(0.80);
+}
+
+.comingSoon > p {
+    margin-bottom: 20px;
+}
+
+.closeComingSoon {
+    width: 100%;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 2px 2px 2px 2px rgba(10, 10, 10, 0.158);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: 
+        linear-gradient(#2a2a2a20, #2a2a2a20) padding-box,
+        linear-gradient(to right, #2a2a2a20, #2a2a2a20) border-box;
+
+    background-size: 400% 400%;
+
+    animation:
+        gradientMove 3s ease infinite;
+}
+
+.closeComingSoon:hover {
+    transform: scale(1.05);
+    filter:
+    drop-shadow(0 2px 5px #1d7e4241);
+
+    background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 3s ease infinite;
+}
+
+.closeComingSoon:active {
+    transform: scale(0.96);
+}
+
+
+
+
+/* VERSUS MODE SCREEN */
+
+
+
+#versusModeBody {
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #0a0a0a, #0f172a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+
+
+
+/* RANKING SCREEN */
+
+
+
+#rankingBody {
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #0a0a0a, #0f172a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
 }
