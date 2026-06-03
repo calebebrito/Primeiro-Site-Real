@@ -143,10 +143,10 @@ header {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 10px #00ff157c;
     font-size: 19pt;
     align-self: center;
+
+    animation: glowPulse 2s infinite;
 }
 
 .goHomeVs:active {
@@ -363,11 +363,21 @@ header {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 30px #00fd1596;
     font-size: 67pt;
     align-self: center;
     width: 100%;
+
+    animation: glowPulse 3s ease infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.6);
+    }
 }
 
 h2 {
@@ -401,8 +411,6 @@ h2 {
 
 .logButton:hover {
     transform: scale(1.07) translate(-3px, -3px);
-    filter:
-    drop-shadow(0 2px 5px #1d7e4241);
 
     background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
     background-size: 400% 400%;
@@ -443,8 +451,6 @@ h2 {
 
 #playQuizButton:hover {
     transform: scale(1.1);
-    filter:
-    drop-shadow(0 2px 5px #1d7e4241);
 
     background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
     background-size: 400% 400%;
@@ -462,7 +468,7 @@ body {
 
     background: linear-gradient(135deg, #0a0a0a, #0c1220, #020617);
     background-size: 400% 400%;
-    animation: gradientMove 15s ease infinite;
+    animation: gradientMove 20s ease infinite;
 }
 
 .why {
@@ -483,12 +489,12 @@ body {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 90px #23E835;
     font-size: 30pt;
     align-self: center;
     margin-left: 7px;
     margin-right: 5px;
+
+    animation: glowPulse 2s infinite;
 }
 
 .whyImages > img {
@@ -598,9 +604,7 @@ body {
 
 #closeStreakPopup:hover {
     transform: scale(1.03);
-    filter:
-    drop-shadow(0 2px 5px #1d7e4241);
-
+    
     background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
     background-size: 400% 400%;
     animation: gradientMove 3s ease infinite;
@@ -642,8 +646,8 @@ body {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 30px #00fd1596;
+    
+    animation: glowPulse 2s infinite;
 }
 
 .goHomeVs3:active {
@@ -686,9 +690,9 @@ body {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 30px #00fd1596;
     font-size: 30pt;
+
+    animation: glowPulse 2s infinite;
 }
 
 .modeBut {
@@ -728,9 +732,7 @@ body {
 .hardMode:hover,
 .blessedMode:hover {
     transform: scale(1.1);
-    filter:
-    drop-shadow(0 2px 5px #1d7e4241);
-
+    
     background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
     background-size: 400% 400%;
     animation: gradientMove 3s ease infinite;
@@ -806,9 +808,7 @@ body {
 
 .optionButton:hover {
     transform: scale(1.1);
-    filter:
-    drop-shadow(0 2px 5px #1d7e4241);
-
+    
     background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
     background-size: 400% 400%;
     animation: gradientMove 3s ease infinite;
@@ -1217,8 +1217,8 @@ input:-webkit-autofill:active {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #23e8337c;
+
+    animation: glowPulse 2s infinite;
 }
 
 .goHomeVs2:active {
@@ -1261,9 +1261,9 @@ input:-webkit-autofill:active {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #23e8337c;
     align-self: center;
+
+    animation: glowPulse 2s infinite;
 }
 
 .create {
@@ -1274,12 +1274,12 @@ input:-webkit-autofill:active {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #23e8337c;
         font-weight: bold;
 
     margin-left: -15%;
     margin-bottom: 15px;
+
+    animation: glowPulse 2s infinite;
 }
 
 .emailInput,
@@ -1397,9 +1397,7 @@ input:-webkit-autofill:active {
 
 .createLogBut:hover {
     transform: scale(1.05);
-    filter:
-    drop-shadow(0 2px 5px #1d7e4241);
-
+    
     background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
     background-size: 400% 400%;
     animation: gradientMove 3s ease infinite;
@@ -1464,12 +1462,12 @@ input:-webkit-autofill:active {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #23e8337c;
-        font-weight: bold;
+    font-weight: bold;
 
     margin-left: -32%;
     margin-bottom: 20px;
+
+    animation: glowPulse 2s infinite;
 }
 
 .logBut {
@@ -1496,9 +1494,7 @@ input:-webkit-autofill:active {
 
 .logBut:hover {
     transform: scale(1.05);
-    filter:
-    drop-shadow(0 2px 5px #1d7e4241);
-
+    
     background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
     background-size: 400% 400%;
     animation: gradientMove 3s ease infinite;
@@ -1558,10 +1554,9 @@ input:-webkit-autofill:active {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #23e8337c;
-
     font-size: 18pt;
+
+    animation: glowPulse 2s infinite;
 }
 
 .goHomeVs4:active {
@@ -1594,12 +1589,12 @@ input:-webkit-autofill:active {
                 #1E3A8A);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #23e8337c;
-        font-weight: bold;
+    font-weight: bold;
         
     padding: 10px;
     margin-bottom: 10px;
+
+    animation: glowPulse 2s infinite;
 }
 
 .levelLine {
@@ -1617,9 +1612,9 @@ input:-webkit-autofill:active {
                 #1E3A8A 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #23e8337c;
-        font-weight: bold;
+    font-weight: bold;
+
+    animation: glowPulse 2s infinite;
 }
 
 .xpBar {
@@ -1687,9 +1682,7 @@ input:-webkit-autofill:active {
         #ffffff 85%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #e5e823cc;
-        font-weight: bold;
+    font-weight: bold;
 
     margin-bottom: 10px;
 }
@@ -1754,9 +1747,7 @@ input:-webkit-autofill:active {
         #ffffff 85%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #e5e823cc;
-        font-weight: bold;
+    font-weight: bold;
 
     width: fit-content;
 }
@@ -1819,12 +1810,12 @@ input:-webkit-autofill:active {
                 #1E3A8A 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow:
-        0 0 15px #23e8337c;
-        font-weight: bold;
-        font-size: 18pt;
+    font-weight: bold;
+    font-size: 18pt;
 
     margin-bottom: 50px;
+
+    animation: glowPulse 2s infinite;
 }
 
 .mainRank {
@@ -2177,9 +2168,7 @@ input:-webkit-autofill:active {
 
 .closeComingSoon:hover {
     transform: scale(1.05);
-    filter:
-    drop-shadow(0 2px 5px #1d7e4241);
-
+    
     background: linear-gradient(135deg, #0a0a0a, #09180a, #020617);
     background-size: 400% 400%;
     animation: gradientMove 3s ease infinite;
