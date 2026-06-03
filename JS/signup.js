@@ -18,7 +18,7 @@ signupForm.addEventListener ("submit", function (event) {
     emailError.textContent = ""
     passwordError.textContent = ""
     confirmPasswordError.textContent = ""
-    captchaError.textContent = ""
+    // captchaError.textContent = ""
 
     emailInput.classList.remove("inputInvalid")
     passwordInput.classList.remove("inputInvalid")
@@ -57,12 +57,12 @@ signupForm.addEventListener ("submit", function (event) {
         return
     }
 
-    const recaptchaResponse = grecaptcha.getResponse()
+    // const recaptchaResponse = grecaptcha.getResponse()
 
-    if (!recaptchaResponse) {
-        captchaError.textContent = "Please confirm that you are not a robot!"
-        return
-    }
+    // if (!recaptchaResponse) {
+    //     captchaError.textContent = "Please confirm that you are not a robot!"
+    //     return
+    // }
 
     const savedUsers = localStorage.getItem("versusUsers")
     const users = savedUsers ? JSON.parse(savedUsers) : []
