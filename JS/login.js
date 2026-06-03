@@ -52,6 +52,6 @@ if (loginForm) {
         localStorage.setItem("versusUser", JSON.stringify(foundUser))
         localStorage.setItem("versusLoggedIn", "true")
 
-        window.location.href = "homeScreen.html"        
+        window.location.href = "index.html"        
     })
 }

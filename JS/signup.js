@@ -118,5 +118,5 @@ signupForm.addEventListener ("submit", function (event) {
     localStorage.setItem("versusUser", JSON.stringify(user))
     localStorage.setItem("versusLoggedIn", "true")
 
-    window.location.href = "homeScreen.html"
+    window.location.href = "index.html"
 })

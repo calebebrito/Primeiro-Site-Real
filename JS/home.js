@@ -65,6 +65,6 @@ if (logoutButton) {
     logoutButton.addEventListener ("click", function() {
         localStorage.setItem("versusLoggedIn", "false")
 
-        window.location.href = "homeScreen.html"
+        window.location.href = "index.html"
     })
 }

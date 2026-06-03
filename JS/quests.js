@@ -7,6 +7,6 @@
 
     if (closeComingSoon) {
         closeComingSoon.addEventListener("click", function () {
-            window.location.href = "homeScreen.html"
+            window.location.href = "index.html"
         })
 }
