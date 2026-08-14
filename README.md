@@ -20,21 +20,22 @@ A Bible-based quiz game focused on learning, progression and competition still i
 
 • Responsive interface
 
+
 🛠️ Technologies
 
-HTML
+•HTML
 
-CSS
+•CSS
 
-JavaScript
+•JavaScript
 
-LocalStorage
+•LocalStorage
 
 
-Coming Soon:
+⏱️Coming Soon:
 
-Real DataBase system;
+•Real DataBase system;
 
-React Integration;
+•React Integration;
 
-A lot of new features;
+•A lot of new features;
