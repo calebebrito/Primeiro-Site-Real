@@ -2,6 +2,10 @@ VERSUS
 
 A Bible-based quiz game focused on learning, progression and competition still in development.
 
+🧪Run and test right now
+
+https://calebebrito.github.io/Versus
+
 🎮 Features
 
 • Quiz system
